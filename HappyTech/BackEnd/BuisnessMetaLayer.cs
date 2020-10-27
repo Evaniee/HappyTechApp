@@ -1,0 +1,314 @@
+﻿using HappyTech.BackEnd.DatabaseClasses;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using MySql.Data.MySqlClient;
+
+namespace HappyTech.BackEnd
+{
+    class BuisnessMetaLayer
+    {
+        private static BuisnessMetaLayer m_instance;        // Current instance of the BuisnessMetaLayer Singleton
+
+        /// <summary>
+        /// Private constructor for BuisnessMetaLayer Singleton
+        /// </summary>
+        private BuisnessMetaLayer()
+        {
+            // Construtor Code Goes Here If Needed
+        }
+
+        /// <summary>
+        /// Gets the current instance of the BuisnessMetaLayer Singletone or makes one if it does not exist
+        /// </summary>
+        public static BuisnessMetaLayer Instance 
+        {
+            get
+            {
+                if (m_instance == null)
+                    m_instance = new BuisnessMetaLayer();
+                return m_instance;
+            }
+        }
+
+        #region Question Classes From Database
+
+        /// <summary>
+        /// Gets all Questions from the questions table
+        /// </summary>
+        /// <returns>List of Questions</returns>
+        public List<Question> GetDBQuestion()
+        {
+            // Open Connection and Read from Database
+            if (DatabaseConnection.Instance.Open())
+            {
+                List<Question> l_questions = new List<Question>();
+                MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT * FROM questions;");
+
+                while (l_dataReader.Read())
+                {
+                    Question l_question = new Question();
+                    l_question.question_id = l_dataReader.GetInt32(0);
+                    l_question.question = l_dataReader.GetString(1);
+                    l_question.response1 = l_dataReader.GetString(2);
+                    l_question.response2 = l_dataReader.GetString(3);
+                    l_question.response3 = l_dataReader.GetString(4);
+                    l_question.response4 = l_dataReader.GetString(5);
+                    l_question.response5 = l_dataReader.GetString(6);
+                    l_questions.Add(l_question);
+                }
+                l_dataReader.Close();
+                DatabaseConnection.Instance.Close();
+                return l_questions;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Gets all FeedbackQuestions from the feedback_questions table
+        /// </summary>
+        /// <returns>List of FeedbackQuestions</returns>
+        public List<FeedbackQuestion> GetDBFeedbackQuestion()
+        {
+            // Open Connection and Read from Database
+            if (DatabaseConnection.Instance.Open())
+            {
+                List<FeedbackQuestion> l_feedbackQuestions = new List<FeedbackQuestion>();
+                MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT * FROM feedback_questions;");
+
+                while (l_dataReader.Read())
+                {
+                    FeedbackQuestion l_feedbackQuestion = new FeedbackQuestion();
+                    l_feedbackQuestion.feedback_question_id = l_dataReader.GetInt32(0);
+                    l_feedbackQuestion.feedback_id = l_dataReader.GetInt32(1);
+                    l_feedbackQuestion.question_id = l_dataReader.GetInt32(2);
+                    l_feedbackQuestion.score = l_dataReader.GetInt32(2);
+                    l_feedbackQuestions.Add(l_feedbackQuestion);
+                }
+                l_dataReader.Close();
+                DatabaseConnection.Instance.Close();
+                return l_feedbackQuestions;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Gets all TemplateQuestions from the template_questions table
+        /// </summary>
+        /// <returns>List of TemplateQuestions</returns>
+        public List<TemplateQuestion> GetDBTemplateQuestion()
+        {
+            // Open Connection and Read from Database
+            if (DatabaseConnection.Instance.Open())
+            {
+                List<TemplateQuestion> l_templateQuestions = new List<TemplateQuestion>();
+                MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT * FROM template_questions;");
+
+                while (l_dataReader.Read())
+                {
+                    TemplateQuestion l_templateQuestion = new TemplateQuestion();
+                    l_templateQuestion.template_question_id = l_dataReader.GetInt32(0);
+                    l_templateQuestion.template_id = l_dataReader.GetInt32(1);
+                    l_templateQuestion.question_id = l_dataReader.GetInt32(2);
+                    l_templateQuestions.Add(l_templateQuestion);
+                }
+                l_dataReader.Close();
+                DatabaseConnection.Instance.Close();
+                return l_templateQuestions;
+            }
+            return null;
+        }
+
+        #endregion
+
+        #region Experience Classes From Database
+
+        /// <summary>
+        /// Gets all Experiences from the feedback_experience table
+        /// </summary>
+        /// <returns>List of Experience</returns>
+        public List<Experience> GetDBExperience()
+        {
+            // Open Connection and Read from Database
+            if (DatabaseConnection.Instance.Open())
+            {
+                List<Experience> l_experiences = new List<Experience>();
+                MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT * FROM experience;");
+
+                while (l_dataReader.Read())
+                {
+                    Experience l_experience = new Experience();
+                    l_experience.experience_id = l_dataReader.GetInt32(0);
+                    l_experience.experience = l_dataReader.GetString(1);
+                    l_experience.response1 = l_dataReader.GetString(2);
+                    l_experience.response2 = l_dataReader.GetString(3);
+                    l_experience.response3 = l_dataReader.GetString(4);
+                    l_experience.response4 = l_dataReader.GetString(5);
+                    l_experience.response5 = l_dataReader.GetString(6);
+                    l_experiences.Add(l_experience);
+                }
+                l_dataReader.Close();
+                DatabaseConnection.Instance.Close();
+                return l_experiences;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Gets all FeedbackExperiences from the feedback_experiences table
+        /// </summary>
+        /// <returns>List of FeedbackExperience</returns>
+        public List<FeedbackExperience> GetDBFeedbackExperience()
+        {
+            // Open Connection and Read from Database
+            if (DatabaseConnection.Instance.Open())
+            {
+                List<FeedbackExperience> l_feedbackExperiences = new List<FeedbackExperience>();
+                MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT * FROM feedback_experience;");
+
+                while (l_dataReader.Read())
+                {
+                    FeedbackExperience l_feedbackExperience = new FeedbackExperience();
+                    l_feedbackExperience.feedback_experience_id = l_dataReader.GetInt32(0);
+                    l_feedbackExperience.feedback_id = l_dataReader.GetInt32(1);
+                    l_feedbackExperience.experience_id = l_dataReader.GetInt32(2);
+                    l_feedbackExperience.score = l_dataReader.GetInt32(2);
+                    l_feedbackExperiences.Add(l_feedbackExperience);
+                }
+                l_dataReader.Close();
+                DatabaseConnection.Instance.Close();
+                return l_feedbackExperiences;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Gets all TemplateExperiences from the template_experience table
+        /// </summary>
+        /// <returns>List of TemplateExperience</returns>
+        public List<TemplateExperience> GetDBTemplateExperience()
+        {
+            // Open Connection and Read from Database
+            if (DatabaseConnection.Instance.Open())
+            {
+                List<TemplateExperience> l_templateExperiences = new List<TemplateExperience>();
+                MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT * FROM template_experience;");
+
+                while (l_dataReader.Read())
+                {
+                    TemplateExperience l_templateExperience = new TemplateExperience();
+                    l_templateExperience.template_experience_id = l_dataReader.GetInt32(0);
+                    l_templateExperience.template_id = l_dataReader.GetInt32(1);
+                    l_templateExperience.experience_id = l_dataReader.GetInt32(2);
+                    l_templateExperiences.Add(l_templateExperience);
+                }
+                l_dataReader.Close();
+                DatabaseConnection.Instance.Close();
+                return l_templateExperiences;
+            }
+            return null;
+        }
+
+        #endregion
+
+        #region Skillset Classes From Database
+
+        //public List<Skillset> GetDBSkillset()
+        //{
+
+        //}
+
+        //public List<FeedbackSkillset> GetDBFeedbackSkillset()
+        //{
+
+        //}
+
+        //public List<TemplateSkillset> GetDBTemplateSkillset()
+        //{
+
+        //}
+
+        #endregion
+
+        #region Teamworking Classes From Database
+
+        //public List<Teamworking> GetDBTeamworking()
+        //{
+
+        //}
+
+        //public List<FeedbackTeamworking> GetDBFeedbackTeamworking()
+        //{
+
+        //}
+
+        //public List<TemplateTeamworking> GetDBTemplateTeamworking()
+        //{
+
+        //}
+
+        #endregion
+
+        #region Job / Applicant Related Classes From Database
+
+        //public List<Applicant> GetDBApplicant()
+        //{
+
+        //}
+
+        //public List<JobApplication> GetDBJobApplications()
+        //{
+
+        //}
+
+        //public List<JobPosition> GetDBJobPositions()
+        //{
+
+        //}
+
+        #endregion
+
+        #region Other Classes From Database
+
+        //public List<Feedback> GetDBFeedback()
+        //{
+
+        //}
+
+        //public List<Template> GetDBTemplate()
+        //{
+
+        //}
+
+        //public List<Login> GetDBLogins()
+        //{
+
+        //}
+
+        #endregion
+
+        #region Generic SQLs
+
+        public bool Insert(string a_insertSQL)
+        {
+            return DatabaseConnection.Instance.Insert(a_insertSQL);
+        }
+
+        public bool Update(string a_updateSQL)
+        {
+            return DatabaseConnection.Instance.Update(a_updateSQL);
+        }
+
+        public bool Delete(string a_deleteSQL)
+        {
+            return DatabaseConnection.Instance.Delete(a_deleteSQL);
+        }
+
+        public MySqlDataReader Select(string a_selectSQL)
+        {
+            return DatabaseConnection.Instance.Select(a_selectSQL);
+        }
+
+        #endregion
+    }
+}
