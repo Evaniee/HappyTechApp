@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace HappyTech.BackEnd
 {
-    class DatabaseConnection
+    public class DatabaseConnection
     {
         /*
          * Based off the example at
@@ -33,7 +33,7 @@ namespace HappyTech.BackEnd
             m_connection = new MySqlConnection(l_connectionString);
 
             // REMOVE FOR FINAL
-            Debug.WriteLine("Connection string: {0}", l_connectionString);
+            //Debug.WriteLine("Connection string: {0}", l_connectionString);
         }
 
         /// <summary>
@@ -221,21 +221,13 @@ namespace HappyTech.BackEnd
         /// <returns>MySqlDataReader containing read information, null if errors</returns>
         public MySqlDataReader Select(string a_selectSQL)
         {
-            try
+            if (m_connection != null)
             {
-                if (Open())
-                {
-                    MySqlCommand l_command = new MySqlCommand();
-                    l_command.CommandText = a_selectSQL;
-                    l_command.Connection = m_connection;
-                    MySqlDataReader l_dataReader = l_command.ExecuteReader();
-                    if (Close())
-                        return l_dataReader;
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error: " + e.Message);
+                MySqlCommand l_command = new MySqlCommand();
+                l_command.CommandText = a_selectSQL;
+                l_command.Connection = m_connection;
+                MySqlDataReader l_dataReader = l_command.ExecuteReader();
+                return l_dataReader;
             }
             return null;
         }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HappyTech.BackEnd.DatabaseClasses
 {
-    class TemplateQuestion
+    public class TemplateQuestion
     {
         private int m_template_question_id;     // Database's template_question_id field
 

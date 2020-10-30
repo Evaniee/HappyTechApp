@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace HappyTech.BackEnd
 {
-    class EmailClient
+    public class EmailClient
     {
         private static EmailClient m_instance;                                  // Current instance of the EmailClient Singleton
 

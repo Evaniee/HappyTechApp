@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HappyTech.BackEnd.DatabaseClasses
 {
-    class TemplateExperience
+    public class TemplateExperience
     {
         private int m_template_experience_id;       // Database's template_experience_id field
 

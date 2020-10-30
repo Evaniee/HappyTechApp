@@ -19,6 +19,7 @@ namespace HappyTech
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
+            BuisnessMetaLayer.Instance.GetDBQuestion();
         }
     }
 }

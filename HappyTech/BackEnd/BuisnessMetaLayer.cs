@@ -6,7 +6,7 @@ using MySql.Data.MySqlClient;
 
 namespace HappyTech.BackEnd
 {
-    class BuisnessMetaLayer
+    public class BuisnessMetaLayer
     {
         private static BuisnessMetaLayer m_instance;        // Current instance of the BuisnessMetaLayer Singleton
 
@@ -310,5 +310,7 @@ namespace HappyTech.BackEnd
         }
 
         #endregion
+
+        
     }
 }
