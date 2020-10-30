@@ -39,6 +39,7 @@
             // 
             this.txt_username.Location = new System.Drawing.Point(336, 194);
             this.txt_username.Name = "txt_username";
+            this.txt_username.PlaceholderText = "Username";
             this.txt_username.Size = new System.Drawing.Size(100, 23);
             this.txt_username.TabIndex = 0;
             // 
@@ -46,21 +47,26 @@
             // 
             this.txt_password.Location = new System.Drawing.Point(336, 258);
             this.txt_password.Name = "txt_password";
+            this.txt_password.PasswordChar = '*';
+            this.txt_password.PlaceholderText = "Password";
             this.txt_password.Size = new System.Drawing.Size(100, 23);
-            this.txt_password.TabIndex = 0;
+            this.txt_password.TabIndex = 1;
             // 
             // btn_login
             // 
             this.btn_login.Location = new System.Drawing.Point(336, 321);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(100, 23);
-            this.btn_login.TabIndex = 1;
+            this.btn_login.TabIndex = 2;
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = true;
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // lbl_username
             // 
+            this.lbl_username.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_username.AutoSize = true;
             this.lbl_username.Location = new System.Drawing.Point(353, 176);
             this.lbl_username.Name = "lbl_username";
@@ -70,6 +76,9 @@
             // 
             // lbl_password
             // 
+            this.lbl_password.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_password.AutoSize = true;
             this.lbl_password.Location = new System.Drawing.Point(353, 240);
             this.lbl_password.Name = "lbl_password";
@@ -81,6 +90,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lbl_password);
             this.Controls.Add(this.lbl_username);
