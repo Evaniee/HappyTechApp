@@ -37,7 +37,7 @@
             // 
             // txt_username
             // 
-            this.txt_username.Location = new System.Drawing.Point(336, 194);
+            this.txt_username.Location = new System.Drawing.Point(354, 157);
             this.txt_username.Name = "txt_username";
             this.txt_username.PlaceholderText = "Username";
             this.txt_username.Size = new System.Drawing.Size(100, 23);
@@ -45,7 +45,7 @@
             // 
             // txt_password
             // 
-            this.txt_password.Location = new System.Drawing.Point(336, 258);
+            this.txt_password.Location = new System.Drawing.Point(354, 221);
             this.txt_password.Name = "txt_password";
             this.txt_password.PasswordChar = '*';
             this.txt_password.PlaceholderText = "Password";
@@ -54,7 +54,7 @@
             // 
             // btn_login
             // 
-            this.btn_login.Location = new System.Drawing.Point(336, 321);
+            this.btn_login.Location = new System.Drawing.Point(354, 284);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(100, 23);
             this.btn_login.TabIndex = 2;
@@ -68,7 +68,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_username.AutoSize = true;
-            this.lbl_username.Location = new System.Drawing.Point(353, 176);
+            this.lbl_username.Location = new System.Drawing.Point(373, 139);
             this.lbl_username.Name = "lbl_username";
             this.lbl_username.Size = new System.Drawing.Size(63, 15);
             this.lbl_username.TabIndex = 0;
@@ -80,7 +80,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_password.AutoSize = true;
-            this.lbl_password.Location = new System.Drawing.Point(353, 240);
+            this.lbl_password.Location = new System.Drawing.Point(374, 203);
             this.lbl_password.Name = "lbl_password";
             this.lbl_password.Size = new System.Drawing.Size(60, 15);
             this.lbl_password.TabIndex = 0;

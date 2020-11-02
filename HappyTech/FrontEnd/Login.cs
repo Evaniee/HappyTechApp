@@ -1,5 +1,6 @@
 ﻿using HappyTech.BackEnd;
 using HappyTech.BackEnd.FormBackEnds;
+using HappyTech.FrontEnd;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,9 +25,9 @@ namespace HappyTech
             LoginBackEnd l_loginBackEnd = new LoginBackEnd();
             if (l_loginBackEnd.ValidateLogin(txt_username.Text, txt_password.Text))
                 if (l_loginBackEnd.CheckHR(txt_username.Text, txt_password.Text))
-                    MessageBox.Show("Logged in as HR");       //change this line for main menu connection (HR)
+                    new MainMenu(true);
                 else
-                    MessageBox.Show("Logged in as Normal");   //change this line for main menu connection (Normal) 
+                    new MainMenu(false); 
         }
     }
 }
