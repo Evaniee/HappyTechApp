@@ -28,8 +28,14 @@ namespace HappyTech.BackEnd
         private DatabaseConnection()
         {
             Dictionary<string, string> l_properties = Properties();
-            string l_connectionString = "server=" + l_properties["Server"] + ";database=" + l_properties["Database"] + ";uid=" + l_properties["User"] + ";password=" + l_properties["Password"];
-            
+            string l_connectionString;
+
+            // If properties uses an account with a password
+            if (l_properties.ContainsKey("Password)"))
+                l_connectionString = "server=" + l_properties["Server"] + ";database=" + l_properties["Database"] + ";uid=" + l_properties["User"] + ";password=" + l_properties["Password"];
+            else
+                l_connectionString = "server=" + l_properties["Server"] + ";database=" + l_properties["Database"] + ";uid=" + l_properties["User"];
+
             m_connection = new MySqlConnection(l_connectionString);
 
             // REMOVE FOR FINAL

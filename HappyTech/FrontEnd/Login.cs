@@ -25,9 +25,9 @@ namespace HappyTech
             LoginBackEnd l_loginBackEnd = new LoginBackEnd();
             if (l_loginBackEnd.ValidateLogin(txt_username.Text, txt_password.Text))
                 if (l_loginBackEnd.CheckHR(txt_username.Text, txt_password.Text))
-                    new MainMenu(true);
+                    new MainMenu(true).Show();
                 else
-                    new MainMenu(false); 
+                    new MainMenu(false).Show();
         }
     }
 }
