@@ -78,72 +78,64 @@ namespace Tests
                 Assert.Pass(l_errorMessage.ToString());
         }
 
-        [Test]
-        public void Test_HasServer()
-        {
-            Dictionary<string, string> l_properties = DatabaseConnection.Instance.Properties();
-            try 
-            {
-                Assert.True(l_properties.ContainsKey("Server"));
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
-}
+//        [Test]
+//        public void Test_HasServer()
+//        {
+//            Dictionary<string, string> l_properties = DatabaseConnection.Instance.Properties();
+//            try 
+//            {
+//                Assert.True(l_properties.ContainsKey("Server"));
+//            }
+//            catch (Exception e)
+//            {
+//                Assert.Fail(e.Message);
+//            }
+//}
 
-        [Test]
-        public void Test_HasDatabase()
-        {
-            Dictionary<string, string> l_properties = DatabaseConnection.Instance.Properties();
-            try {
-                Assert.True(l_properties.ContainsKey("Database"));
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
-}
+//        [Test]
+//        public void Test_HasDatabase()
+//        {
+//            Dictionary<string, string> l_properties = DatabaseConnection.Instance.Properties();
+//            try {
+//                Assert.True(l_properties.ContainsKey("Database"));
+//            }
+//            catch (Exception e)
+//            {
+//                Assert.Fail(e.Message);
+//            }
+//}
 
-        [Test]
-        public void Test_HasUser()
-        {
-            Dictionary<string, string> l_properties = DatabaseConnection.Instance.Properties();
-            try
-            {
-                Assert.True(l_properties.ContainsKey("User"));
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
-        }
+//        [Test]
+//        public void Test_HasUser()
+//        {
+//            Dictionary<string, string> l_properties = DatabaseConnection.Instance.Properties();
+//            try
+//            {
+//                Assert.True(l_properties.ContainsKey("User"));
+//            }
+//            catch (Exception e)
+//            {
+//                Assert.Fail(e.Message);
+//            }
+//        }
 
-        /*
-         * This Test can fail without issues sometimes
-         * Please check if the properties file contains a "Password" line
-         * If it does and this fails there is an issue else it is okay
-         */
-        [Test]
-        public void Test_HasPassword()
-        {
-            Dictionary<string, string> l_properties = DatabaseConnection.Instance.Properties();
-            try 
-            {
-            Assert.True(l_properties.ContainsKey("Password"));
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
-        }
-
-        // UNSURE HOW?
-        //[Test]
-        //public void Test_Password(string a_password)
-        //{
-        //    Dictionary<string, string> l_properties = DatabaseConnection.Instance.Properties();
-        //    Assert.AreEqual(l_properties["Password"], a_password);
-        //}
+//        /*
+//         * This Test can fail without issues sometimes
+//         * Please check if the properties file contains a "Password" line
+//         * If it does and this fails there is an issue else it is okay
+//         */
+//        [Test]
+//        public void Test_HasPassword()
+//        {
+//            Dictionary<string, string> l_properties = DatabaseConnection.Instance.Properties();
+//            try 
+//            {
+//            Assert.True(l_properties.ContainsKey("Password"));
+//            }
+//            catch (Exception e)
+//            {
+//                Assert.Fail(e.Message);
+//            }
+//        }
     }
 }
