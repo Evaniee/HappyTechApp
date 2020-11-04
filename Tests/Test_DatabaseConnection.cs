@@ -1,4 +1,5 @@
 ﻿using HappyTech.BackEnd;
+using MySql.Data.MySqlClient;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -77,6 +78,62 @@ namespace Tests
             else
                 Assert.Pass(l_errorMessage.ToString());
         }
+
+        [Test]
+        public void Test_Open()
+        {
+            Assert.IsTrue(DatabaseConnection.Instance.Open());
+            
+        }
+
+        [Test]
+        public void Test_Close()
+        {
+            Assert.IsTrue(DatabaseConnection.Instance.Close());
+        }
+
+        [Test]
+        public void Test_SQLStatements()
+        {
+            bool l_success;
+            l_success = (DatabaseConnection.Instance.Insert("INSERT INTO logins VALUES (null, 'test_name', 'test_pass', false);"));
+            if (l_success)
+            {
+                l_success = (DatabaseConnection.Instance.Update("UPDATE logins SET hr_user = true WHERE username = 'test_name';"));
+                if (l_success)
+                {
+                    //MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT password FROM logins WHERE username = 'test_name' AND hr_user = true;");
+                    //string l_password = null;
+                    //try
+                    //{
+                    //    while (l_dataReader.Read())
+                    //    {
+                    //        l_password = l_dataReader.GetString(0);
+                    //    }
+                    //    if (l_password == "test_pass")
+                    //    {
+                    l_success = DatabaseConnection.Instance.Delete("DELETE FROM logins WHERE username = 'test_name' AND hr_user = true");
+                    if (l_success)
+                        Assert.Pass();
+                    else
+                        Assert.Fail("Delete Test Failed");
+
+                    //    }
+                    //    Assert.Fail("Insert Test did not return expected");
+
+                    //}
+                    //catch
+                    //{
+                    //    Assert.Fail("Select could not find entries");
+                    //}
+                    
+                }
+                Assert.Fail("Update Test Failed");
+            }
+            Assert.Fail("Insert Test Failed");
+        }
+
+
 
 //        [Test]
 //        public void Test_HasServer()
