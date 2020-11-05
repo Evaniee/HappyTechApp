@@ -232,10 +232,27 @@ namespace HappyTech.BackEnd
 
         #region Teamworking Classes From Database
 
-        //public List<Teamworking> GetDBTeamworking()
-        //{
+        public List<Teamworking> GetDBTeamworking()
+        {
+            // Open Connection and Read from Database
+            if (DatabaseConnection.Instance.Open())
+            {
+                List<Teamworking> l_teamworkings = new List<Teamworking>();
+                MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT * FROM teamworking;");
 
-        //}
+                while (l_dataReader.Read())
+                {
+                    Teamworking l_teamworking = new Teamworking();
+                    l_teamworking.teamworking_id = l_dataReader.GetInt32(0);
+                    l_teamworking.teamworking = l_dataReader.GetString(1);
+                    l_teamworkings.Add(l_teamworking);
+                }
+                l_dataReader.Close();
+                DatabaseConnection.Instance.Close();
+                return l_teamworkings;
+            }
+            return null;
+        }
 
         //public List<FeedbackTeamworking> GetDBFeedbackTeamworking()
         //{

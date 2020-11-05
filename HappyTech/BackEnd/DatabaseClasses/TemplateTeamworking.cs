@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HappyTech.BackEnd.DatabaseClasses
 {
-    class TemplateTeamworking
+    public class TemplateTeamworking
     {
         private int m_template_teamworking_id;      
 
