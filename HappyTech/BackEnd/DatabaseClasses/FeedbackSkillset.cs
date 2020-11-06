@@ -4,12 +4,12 @@ using System.Text;
 
 namespace HappyTech.BackEnd.DatabaseClasses
 {
-    class FeedbackSkillset
+    public class FeedbackSkillset
     {
         private int m_feedback_skillset_id;      //This is the databases feedback_skillset_id field
 
         //Get and set m_feedback_skillset_id
-        public int feedback_question_id
+        public int feedback_skillset_id
         {
             get
             {
@@ -69,5 +69,6 @@ namespace HappyTech.BackEnd.DatabaseClasses
                 m_achieved = value;
             }
         }
+
     }
 }
