@@ -254,15 +254,53 @@ namespace HappyTech.BackEnd
             return null;
         }
 
-        //public List<FeedbackTeamworking> GetDBFeedbackTeamworking()
-        //{
+        public List<FeedbackTeamworking> GetDBFeedbackTeamworking()
+        {
+            if (DatabaseConnection.Instance.Open())
+            {
+                List<FeedbackTeamworking> l_feedbackTeamworkings = new List<FeedbackTeamworking>();
+                MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT * FROM feedback_teamworking;");
 
-        //}
+                while (l_dataReader.Read())
+                {
+                    FeedbackTeamworking l_feedbackTeamworking = new FeedbackTeamworking();
+                    l_feedbackTeamworking.feedback_teamworking_id = l_dataReader.GetInt32(0);
+                    l_feedbackTeamworking.feedback_id = l_dataReader.GetInt32(1);
+                    l_feedbackTeamworking.teamworking_id = l_dataReader.GetInt32(2);
+                    l_feedbackTeamworking.achieved = l_dataReader.GetBoolean(2);
+                    l_feedbackTeamworkings.Add(l_feedbackTeamworking);
+                }
+                l_dataReader.Close();
+                DatabaseConnection.Instance.Close();
+                return l_feedbackTeamworkings;
+            }
+            return null;
+        }
 
-        //public List<TemplateTeamworking> GetDBTemplateTeamworking()
-        //{
+        public List<TemplateTeamworking> GetDBTemplateTeamworking()
+        {
+            if (DatabaseConnection.Instance.Open())
+            {
 
-        //}
+
+                List<TemplateTeamworking> l_templateTeamworkings = new List<TemplateTeamworking>();
+                MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT * FROM template_Teamworking;");
+
+                while (l_dataReader.Read())
+                {
+                    TemplateTeamworking l_templateTeamworking = new TemplateTeamworking();
+                    l_templateTeamworking.template_teamworking_id = l_dataReader.GetInt32(0);
+                    l_templateTeamworking.template_id = l_dataReader.GetInt32(1);
+                    l_templateTeamworking.teamworking_id = l_dataReader.GetInt32(2);
+                    l_templateTeamworkings.Add(l_templateTeamworking);
+                }
+                l_dataReader.Close();
+                DatabaseConnection.Instance.Close();
+                return l_templateTeamworkings;
+            }
+            return null;
+        }
+        
 
         #endregion
 

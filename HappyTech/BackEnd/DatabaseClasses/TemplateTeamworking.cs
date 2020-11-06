@@ -8,7 +8,7 @@ namespace HappyTech.BackEnd.DatabaseClasses
     {
         private int m_template_teamworking_id;      
 
-        public int template_skillset_id
+        public int template_teamworking_id
         {
             get
             {
@@ -39,7 +39,7 @@ namespace HappyTech.BackEnd.DatabaseClasses
         private int m_teamworking_id;              
 
 
-        public int skillset_id
+        public int teamworking_id
         {
             get
             {
