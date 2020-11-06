@@ -45,5 +45,11 @@ namespace HappyTech.FrontEnd
             login.Show();
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            NewExperience newexperience = new NewExperience();
+            newexperience.Show();
+        }
     }
 }
