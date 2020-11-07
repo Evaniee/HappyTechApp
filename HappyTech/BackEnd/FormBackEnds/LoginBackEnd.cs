@@ -6,7 +6,7 @@ using MySql.Data.MySqlClient;
 
 namespace HappyTech.BackEnd.FormBackEnds
 {
-    class LoginBackEnd
+    public class LoginBackEnd
     {
         public bool ValidateLogin(string a_username, string a_password)
         {
