@@ -14,5 +14,15 @@ namespace HappyTech.FrontEnd
         {
             InitializeComponent();
         }
+
+        public void Populate_cmb_jobTemplate(List<string> a_values)
+        {
+            cmb_jobTemplate.DataSource = a_values;
+        }
+
+        private void cmb_jobTemplate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

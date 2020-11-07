@@ -110,6 +110,7 @@
             this.cmb_jobTemplate.Size = new System.Drawing.Size(121, 23);
             this.cmb_jobTemplate.TabIndex = 7;
             this.cmb_jobTemplate.Text = "Job Position";
+            this.cmb_jobTemplate.SelectedIndexChanged += new System.EventHandler(this.cmb_jobTemplate_SelectedIndexChanged);
             // 
             // lbl_jobPosition
             // 

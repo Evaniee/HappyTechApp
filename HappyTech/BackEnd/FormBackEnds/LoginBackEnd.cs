@@ -2,13 +2,47 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
+using Accessibility;
 using MySql.Data.MySqlClient;
+using HappyTech.FrontEnd;
 
 namespace HappyTech.BackEnd.FormBackEnds
 {
     public class LoginBackEnd
     {
-        public bool ValidateLogin(string a_username, string a_password)
+        private Login m_frontEnd;       // Associated FrontEnd
+
+        /// <summary>
+        /// Constructor for a LoginBackEnd
+        /// </summary>
+        /// <param name="a_frontEnd">Associated FrontEnd</param>
+        public LoginBackEnd(Login a_frontEnd)
+        {
+            m_frontEnd = a_frontEnd;
+            a_frontEnd.Connect(this);
+        }
+
+        /// <summary>
+        /// Login to Application
+        /// </summary>
+        /// <param name="a_username">Username to login using</param>
+        /// <param name="a_password">Password to login using</param>
+        public void Login(string a_username, string a_password)
+        {
+            if (ValidateLogin(a_username, a_password))
+            {
+                new MainMenu(CheckHR(a_username, a_password)).Show();
+                m_frontEnd.Hide();
+            }
+        }
+
+        /// <summary>
+        /// Validate login details
+        /// </summary>
+        /// <param name="a_username">Username to login using</param>
+        /// <param name="a_password">Password to login using</param>
+        /// <returns>True if username matches password false if not</returns>
+        private bool ValidateLogin(string a_username, string a_password)
         {
             if (DatabaseConnection.Instance.Open())
             {
@@ -37,7 +71,13 @@ namespace HappyTech.BackEnd.FormBackEnds
             return false;
         }
 
-        public bool CheckHR(string a_username, string a_password)
+        /// <summary>
+        /// Check if user is in HR
+        /// </summary>
+        /// <param name="a_username">Username to check</param>
+        /// <param name="a_password">Password to check</param>
+        /// <returns>True if HR false if not</returns>
+        private bool CheckHR(string a_username, string a_password)
         {
             if (DatabaseConnection.Instance.Open())
             {
