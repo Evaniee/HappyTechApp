@@ -46,5 +46,10 @@ namespace HappyTech
             string l_password = txt_password.Text;
             m_backEnd.Login(l_username, l_password);
         }
+
+        /// <summary>
+        /// Getter for back end
+        /// </summary>
+        public LoginBackEnd BackEnd { get { return m_backEnd; } }
     }
 }

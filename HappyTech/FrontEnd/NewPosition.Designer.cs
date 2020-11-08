@@ -36,7 +36,7 @@
             this.txt_jobDescription = new System.Windows.Forms.TextBox();
             this.lbl_jobDescription = new System.Windows.Forms.Label();
             this.cmb_jobTemplate = new System.Windows.Forms.ComboBox();
-            this.lbl_jobPosition = new System.Windows.Forms.Label();
+            this.lbl_jobTemplate = new System.Windows.Forms.Label();
             this.btn_submit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -109,17 +109,17 @@
             this.cmb_jobTemplate.Name = "cmb_jobTemplate";
             this.cmb_jobTemplate.Size = new System.Drawing.Size(121, 23);
             this.cmb_jobTemplate.TabIndex = 7;
-            this.cmb_jobTemplate.Text = "Job Position";
+            this.cmb_jobTemplate.Text = "Job Template";
             this.cmb_jobTemplate.SelectedIndexChanged += new System.EventHandler(this.cmb_jobTemplate_SelectedIndexChanged);
             // 
-            // lbl_jobPosition
+            // lbl_jobTemplate
             // 
-            this.lbl_jobPosition.AutoSize = true;
-            this.lbl_jobPosition.Location = new System.Drawing.Point(348, 352);
-            this.lbl_jobPosition.Name = "lbl_jobPosition";
-            this.lbl_jobPosition.Size = new System.Drawing.Size(71, 15);
-            this.lbl_jobPosition.TabIndex = 8;
-            this.lbl_jobPosition.Text = "Job Position";
+            this.lbl_jobTemplate.AutoSize = true;
+            this.lbl_jobTemplate.Location = new System.Drawing.Point(348, 352);
+            this.lbl_jobTemplate.Name = "lbl_jobTemplate";
+            this.lbl_jobTemplate.Size = new System.Drawing.Size(76, 15);
+            this.lbl_jobTemplate.TabIndex = 8;
+            this.lbl_jobTemplate.Text = "Job Template";
             // 
             // btn_submit
             // 
@@ -129,6 +129,7 @@
             this.btn_submit.TabIndex = 9;
             this.btn_submit.Text = "Submit Position";
             this.btn_submit.UseVisualStyleBackColor = true;
+            this.btn_submit.Click += new System.EventHandler(this.btn_submit_Click);
             // 
             // NewPosition
             // 
@@ -136,7 +137,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btn_submit);
-            this.Controls.Add(this.lbl_jobPosition);
+            this.Controls.Add(this.lbl_jobTemplate);
             this.Controls.Add(this.cmb_jobTemplate);
             this.Controls.Add(this.lbl_jobDescription);
             this.Controls.Add(this.txt_jobDescription);
@@ -162,7 +163,7 @@
         private System.Windows.Forms.TextBox txt_jobDescription;
         private System.Windows.Forms.Label lbl_jobDescription;
         private System.Windows.Forms.ComboBox cmb_jobTemplate;
-        private System.Windows.Forms.Label lbl_jobPosition;
         private System.Windows.Forms.Button btn_submit;
+        private System.Windows.Forms.Label lbl_jobTemplate;
     }
 }

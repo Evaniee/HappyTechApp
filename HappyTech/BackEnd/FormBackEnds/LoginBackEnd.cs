@@ -47,7 +47,7 @@ namespace HappyTech.BackEnd.FormBackEnds
             if (DatabaseConnection.Instance.Open())
             {
                 int l_count = -1;
-                MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT COUNT(login_id) FROM logins WHERE username = '" + a_username + "' AND password = '" + a_password + "';");
+                MySqlDataReader l_dataReader = BuisnessMetaLayer.Instance.Select("SELECT COUNT(login_id) FROM logins WHERE username = '" + a_username + "' AND password = '" + a_password + "';");
                 while (l_dataReader.Read())
                 {
                     l_count = l_dataReader.GetInt32(0);

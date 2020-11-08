@@ -74,5 +74,10 @@ namespace HappyTech.FrontEnd
         {
             m_backEnd.LogOut();
         }
+
+        /// <summary>
+        /// Getter for associated back end
+        /// </summary>
+        public MainMenuBackEnd BackEnd { get { return m_backEnd; } }
     }
 }
