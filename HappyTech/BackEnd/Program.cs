@@ -1,4 +1,5 @@
 using HappyTech.BackEnd;
+using HappyTech.BackEnd.FormBackEnds;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,6 @@ namespace HappyTech
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
-            BuisnessMetaLayer.Instance.GetDBQuestion();
         }
     }
 }

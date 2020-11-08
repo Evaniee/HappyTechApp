@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HappyTech.BackEnd.DatabaseClasses
 {
-    class Skillset
+    public class Skillset
     {
         private int m_skillset_id;      // This is the databases skillset_id field
 
