@@ -44,8 +44,7 @@ namespace HappyTech.BackEnd.FormBackEnds
         /// </summary>
         public void LogOut()
         {
-            // Unsure of How To Implement Ask Nigel / Paula
-            MessageBox.Show("Issues with Implementation.");
+            Application.Exit();
         }
 
         public bool HR { get { return m_hr; } }
