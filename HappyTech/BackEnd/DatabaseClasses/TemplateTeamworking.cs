@@ -6,7 +6,7 @@ namespace HappyTech.BackEnd.DatabaseClasses
 {
     public class TemplateTeamworking
     {
-        private int m_template_teamworking_id;      
+        private int m_template_teamworking_id;
 
         public int template_teamworking_id
         {
@@ -21,7 +21,7 @@ namespace HappyTech.BackEnd.DatabaseClasses
             }
         }
 
-        private int m_template_id;             
+        private int m_template_id;
 
         public int template_id
         {
@@ -36,7 +36,7 @@ namespace HappyTech.BackEnd.DatabaseClasses
             }
         }
 
-        private int m_teamworking_id;              
+        private int m_teamworking_id;
 
 
         public int teamworking_id
@@ -53,3 +53,4 @@ namespace HappyTech.BackEnd.DatabaseClasses
         }
     }
 }
+

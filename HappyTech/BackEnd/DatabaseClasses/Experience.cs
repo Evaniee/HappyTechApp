@@ -6,21 +6,19 @@ namespace HappyTech.BackEnd.DatabaseClasses
 {
     public class Experience
     {
-        private int m_experience_id;        // Database's experience_id field
+        private int m_experience_id;                // Database's experience_id field
 
         /// <summary>
         /// Getter & Setter for m_experience_id
         /// </summary>
         public int experience_id { get { return m_experience_id; } set { m_experience_id = value; } }
 
-
-        private string m_experience;        // Database's experience field
+        private string m_experience;      // Database's experience field
 
         /// <summary>
-        /// Getter & Setter for m_experience
+        /// Getter & Setter for m_question
         /// </summary>
         public string experience { get { return m_experience; } set { m_experience = value; } }
-
 
         private string m_response1;         // Databases response1 field
 

@@ -98,7 +98,8 @@ namespace HappyTech.BackEnd
         {
             try
             {
-                m_connection.Open();
+                if(m_connection.State != System.Data.ConnectionState.Open) 
+                    m_connection.Open();
                 return true;
             }
             catch(MySqlException e)
@@ -130,9 +131,8 @@ namespace HappyTech.BackEnd
                 m_connection.Close();
                 return true;
             }
-            catch (MySqlException e)
+            catch
             {
-                MessageBox.Show(e.Message);
                 return false;
             }
         }
@@ -227,13 +227,22 @@ namespace HappyTech.BackEnd
         /// <returns>MySqlDataReader containing read information, null if errors</returns>
         public MySqlDataReader Select(string a_selectSQL)
         {
-            if (m_connection != null)
+            try
             {
-                MySqlCommand l_command = new MySqlCommand();
-                l_command.CommandText = a_selectSQL;
-                l_command.Connection = m_connection;
-                MySqlDataReader l_dataReader = l_command.ExecuteReader();
-                return l_dataReader;
+                if (Open())
+                    if (m_connection != null)
+                    {
+                        MySqlCommand l_command = new MySqlCommand();
+                        l_command.CommandText = a_selectSQL;
+                        l_command.Connection = m_connection;
+                        MySqlDataReader l_dataReader = l_command.ExecuteReader();
+                        return l_dataReader;
+                    }
+                return null;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error: " + e.Message);
             }
             return null;
         }

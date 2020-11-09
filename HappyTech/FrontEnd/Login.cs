@@ -15,19 +15,41 @@ namespace HappyTech
 {
     public partial class Login : Form
     {
+        private LoginBackEnd m_backEnd;     // BackEnd associated with FrontEnd
+
+        /// <summary>
+        /// Constructor for the Login Form
+        /// </summary>
         public Login()
         {
+            m_backEnd = new LoginBackEnd(this);
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Connect the Login's BackEnd to the FrontEnd
+        /// </summary>
+        /// <param name="a_backEnd"></param>
+        public void Connect(LoginBackEnd a_backEnd)
+        {
+            m_backEnd = a_backEnd;
+        }
+
+        /// <summary>
+        /// Event handler for btn_login being clicked
+        /// </summary>
+        /// <param name="sender">Sender of event</param>
+        /// <param name="e">Arguments of event</param>
         private void btn_login_Click(object sender, EventArgs e)
         {
-            LoginBackEnd l_loginBackEnd = new LoginBackEnd();
-            if (l_loginBackEnd.ValidateLogin(txt_username.Text, txt_password.Text))
-                if (l_loginBackEnd.CheckHR(txt_username.Text, txt_password.Text))
-                    new MainMenu(true).Show();
-                else
-                    new MainMenu(false).Show();
+            string l_username = txt_username.Text;
+            string l_password = txt_password.Text;
+            m_backEnd.Login(l_username, l_password);
         }
+
+        /// <summary>
+        /// Getter for back end
+        /// </summary>
+        public LoginBackEnd BackEnd { get { return m_backEnd; } }
     }
 }
