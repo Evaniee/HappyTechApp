@@ -4,9 +4,9 @@ using System.Text;
 
 namespace HappyTech.BackEnd.DatabaseClasses
 {
-    class Teamworking
+    public class Teamworking
     {
-        private int m_teamworking_id;     
+        private int m_teamworking_id;
 
         public int teamworking_id
         {
@@ -21,7 +21,7 @@ namespace HappyTech.BackEnd.DatabaseClasses
             }
         }
 
-        private string m_teamworking;    
+        private string m_teamworking;
 
         public string teamworking
         {

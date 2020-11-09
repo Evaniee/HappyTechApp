@@ -4,15 +4,19 @@ using System.Text;
 
 namespace HappyTech.BackEnd.DatabaseClasses
 {
-    class FeedbackTeamworking
+    public class FeedbackTeamworking
     {
         private int m_feedback_teamworking_id;
 
-        public int feedback_questions_id
+        public int feedback_teamworking_id
         {
             get
             {
                 return m_feedback_teamworking_id;
+            }
+            set
+            {
+                m_feedback_teamworking_id = value;
             }
         }
 
@@ -46,18 +50,18 @@ namespace HappyTech.BackEnd.DatabaseClasses
             }
         }
 
-        private bool m_achived;
+        private bool m_achieved;
 
-        public bool archived
+        public bool achieved
         {
             get
             {
-                return m_achived;
+                return m_achieved;
             }
 
             set
             {
-                m_achived = value;
+                m_achieved = value;
             }
         }
     }
