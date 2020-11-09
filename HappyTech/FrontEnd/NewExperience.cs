@@ -12,7 +12,7 @@ namespace HappyTech.FrontEnd
 {
     public partial class NewExperience : Form
     {
-        NewExperienceBackEnd m_newExperienceBackEnd;
+        private NewExperienceBackEnd m_newExperienceBackEnd;
 
         /// <summary>
         /// Constructor for New Experience Front End

@@ -28,15 +28,7 @@ namespace Tests.BackEnd
             if (l_values == null)
                 Assert.Fail("No Values Found");
             if (l_values[0] != "New Template")
-                Assert.Fail("New Template not showing");
-            if (l_values[1] != "1: Programmer")
-                Assert.Fail("Entry 1 Failed");
-            if (l_values[2] != "2: Gardener")
-                Assert.Fail("Entry 2 Failed");
-            if (l_values[3] != "3: Builder")
-                Assert.Fail("Entry 3 Failed");
-            if (l_values[4] != "4: CEO")
-                Assert.Fail("Entry 4 Failed");
+                Assert.Fail("New Template not showing");            
             Assert.Pass();
         }
 

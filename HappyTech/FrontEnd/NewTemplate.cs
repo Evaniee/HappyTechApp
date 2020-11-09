@@ -48,7 +48,7 @@ namespace HappyTech.FrontEnd
         /// <param name="e">Event args</param>
         private void btn_experience_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Open Experience");
+            m_backEnd.NewExperience();
         }
 
         /// <summary>
