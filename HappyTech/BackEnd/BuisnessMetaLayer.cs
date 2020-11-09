@@ -11,11 +11,11 @@ namespace HappyTech.BackEnd
         private static BuisnessMetaLayer m_instance;        // Current instance of the BuisnessMetaLayer Singleton
 
         /// <summary>
-        /// Private constructor for BuisnessMetaLayer Singleton
+        /// Private constructor for BuisnessMetaLayer Singleton to force singleton behaviour
         /// </summary>
         private BuisnessMetaLayer()
         {
-            // Construtor Code Goes Here If Needed
+
         }
 
         /// <summary>
@@ -281,8 +281,6 @@ namespace HappyTech.BackEnd
         {
             if (DatabaseConnection.Instance.Open())
             {
-
-
                 List<TemplateTeamworking> l_templateTeamworkings = new List<TemplateTeamworking>();
                 MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT * FROM template_Teamworking;");
 
@@ -300,7 +298,6 @@ namespace HappyTech.BackEnd
             }
             return null;
         }
-        
 
         #endregion
 
@@ -316,10 +313,29 @@ namespace HappyTech.BackEnd
 
         //}
 
-        //public List<JobPosition> GetDBJobPositions()
-        //{
+        public List<JobPosition> GetDBJobPositions()
+        {
+            // Open Connection and Read from Database
+            if (DatabaseConnection.Instance.Open())
+            {
+                List<JobPosition> l_jobPositions = new List<JobPosition>();
+                MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT * FROM job_position;");
 
-        //}
+                while (l_dataReader.Read())
+                {
+                    JobPosition l_jobPosition = new JobPosition();
+                    l_jobPosition.job_code = l_dataReader.GetString(0);
+                    l_jobPosition.template_id = l_dataReader.GetInt32(1);
+                    l_jobPosition.title = l_dataReader.GetString(2);
+                    l_jobPosition.description = l_dataReader.GetString(3);
+                    l_jobPositions.Add(l_jobPosition);
+                }
+                l_dataReader.Close();
+                DatabaseConnection.Instance.Close();
+                return l_jobPositions;
+            }
+            return null;
+        }
 
         #endregion
 
@@ -330,10 +346,31 @@ namespace HappyTech.BackEnd
 
         //}
 
-        //public List<Template> GetDBTemplate()
-        //{
+        /// <summary>
+        /// Gets all Templates from the template table
+        /// </summary>
+        /// <returns>List of Templates</returns>
+        public List<Template> GetDBTemplate()
+        {
+            // Open Connection and Read from Database
+            if (DatabaseConnection.Instance.Open())
+            {
+                List<Template> l_templates = new List<Template>();
+                MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT * FROM template;");
 
-        //}
+                while (l_dataReader.Read())
+                {
+                    Template l_template = new Template();
+                    l_template.template_id = l_dataReader.GetInt32(0);
+                    l_template.title = l_dataReader.GetString(1);
+                    l_templates.Add(l_template);
+                }
+                l_dataReader.Close();
+                DatabaseConnection.Instance.Close();
+                return l_templates;
+            }
+            return null;
+        }
 
         //public List<Login> GetDBLogins()
         //{
