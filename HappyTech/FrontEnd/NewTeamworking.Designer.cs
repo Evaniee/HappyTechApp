@@ -28,58 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_teamworkingRequirement = new System.Windows.Forms.TextBox();
-            this.btn_AddTeamworking = new System.Windows.Forms.Button();
+            this.lbl_Title = new System.Windows.Forms.Label();
+            this.btn_Submit = new System.Windows.Forms.Button();
+            this.txt_Teamworking = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // label1
+            // lbl_Title
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(337, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "New Teamworking Requirement";
+            this.lbl_Title.AutoSize = true;
+            this.lbl_Title.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Title.Location = new System.Drawing.Point(339, 100);
+            this.lbl_Title.Name = "lbl_Title";
+            this.lbl_Title.Size = new System.Drawing.Size(99, 37);
+            this.lbl_Title.TabIndex = 0;
+            this.lbl_Title.Text = "Teamworking";
             // 
-            // label2
+            // btn_Submit
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(378, 121);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Requirement";
+            this.btn_Submit.Location = new System.Drawing.Point(307, 386);
+            this.btn_Submit.Name = "btn_Submit";
+            this.btn_Submit.Size = new System.Drawing.Size(162, 23);
+            this.btn_Submit.TabIndex = 2;
+            this.btn_Submit.Text = "Submit";
+            this.btn_Submit.UseVisualStyleBackColor = true;
+            this.btn_Submit.Click += new System.EventHandler(this.btn_Submit_Click_1);
             // 
-            // txt_teamworkingRequirement
+            // txt_Teamworking
             // 
-            this.txt_teamworkingRequirement.Location = new System.Drawing.Point(62, 164);
-            this.txt_teamworkingRequirement.Name = "txt_teamworkingRequirement";
-            this.txt_teamworkingRequirement.Size = new System.Drawing.Size(692, 23);
-            this.txt_teamworkingRequirement.TabIndex = 1;
-            // 
-            // btn_AddTeamworking
-            // 
-            this.btn_AddTeamworking.Location = new System.Drawing.Point(378, 262);
-            this.btn_AddTeamworking.Name = "btn_AddTeamworking";
-            this.btn_AddTeamworking.Size = new System.Drawing.Size(75, 23);
-            this.btn_AddTeamworking.TabIndex = 2;
-            this.btn_AddTeamworking.Text = "Add Teamworking Requirement";
-            this.btn_AddTeamworking.UseVisualStyleBackColor = true;
+            this.txt_Teamworking.Location = new System.Drawing.Point(12, 162);
+            this.txt_Teamworking.Multiline = true;
+            this.txt_Teamworking.Name = "txt_Teamworking";
+            this.txt_Teamworking.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txt_Teamworking.Size = new System.Drawing.Size(776, 68);
+            this.txt_Teamworking.TabIndex = 0;
             // 
             // NewTeamworking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btn_AddTeamworking);
-            this.Controls.Add(this.txt_teamworkingRequirement);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txt_Teamworking);
+            this.Controls.Add(this.btn_Submit);
+            this.Controls.Add(this.lbl_Title);
             this.Name = "NewTeamworking";
             this.Text = "NewTeamworking";
-            this.Load += new System.EventHandler(this.NewTeamworking_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -87,9 +79,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_teamworkingRequirement;
-        private System.Windows.Forms.Button btn_AddTeamworking;
+        private System.Windows.Forms.Label lbl_Title;
+        private System.Windows.Forms.Button btn_Submit;
+        private System.Windows.Forms.TextBox txt_Teamworking;
     }
 }
