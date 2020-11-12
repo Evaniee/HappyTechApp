@@ -219,7 +219,7 @@ namespace HappyTech.BackEnd
             if (DatabaseConnection.Instance.Open())
             {
                 List<Skillset> l_skillsets = new List<Skillset>();
-                MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT * FROM skillsets;");
+                MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT * FROM skillset;");
 
                 while (l_dataReader.Read())
                 {

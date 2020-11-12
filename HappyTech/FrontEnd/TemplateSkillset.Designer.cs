@@ -32,11 +32,11 @@
             this.txt_Requirements = new System.Windows.Forms.TextBox();
             this.lbl_RemoveSkillset = new System.Windows.Forms.Label();
             this.cmb_RemoveSkillset = new System.Windows.Forms.ComboBox();
-            this.cmb_EditSkillset = new System.Windows.Forms.ComboBox();
             this.lbl_EditSkillset = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_AddSkillset = new System.Windows.Forms.Label();
-            this.cmb_AddSkillset = new System.Windows.Forms.ComboBox();
+            this.cmb_AddExistSkillset = new System.Windows.Forms.ComboBox();
+            this.cmb_EditSkillset = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lbl_Subtitle
@@ -74,16 +74,7 @@
             this.cmb_RemoveSkillset.Name = "cmb_RemoveSkillset";
             this.cmb_RemoveSkillset.Size = new System.Drawing.Size(121, 23);
             this.cmb_RemoveSkillset.TabIndex = 0;
-            this.cmb_RemoveSkillset.SelectedIndexChanged += new System.EventHandler(this.cmb_remove_SelectedIndexChanged);
-            // 
-            // cmb_EditSkillset
-            // 
-            this.cmb_EditSkillset.FormattingEnabled = true;
-            this.cmb_EditSkillset.Location = new System.Drawing.Point(12, 225);
-            this.cmb_EditSkillset.Name = "cmb_EditSkillset";
-            this.cmb_EditSkillset.Size = new System.Drawing.Size(121, 23);
-            this.cmb_EditSkillset.TabIndex = 0;
-            this.cmb_EditSkillset.SelectedIndexChanged += new System.EventHandler(this.cmb_addEdit_SelectedIndexChanged);
+            this.cmb_RemoveSkillset.SelectedIndexChanged += new System.EventHandler(this.cmb_RemoveSkillset_SelectedIndexChanged);
             // 
             // lbl_EditSkillset
             // 
@@ -111,25 +102,34 @@
             this.lbl_AddSkillset.TabIndex = 1;
             this.lbl_AddSkillset.Text = "Add Requirement to Template:";
             // 
-            // cmb_AddSkillset
+            // cmb_AddExistSkillset
             // 
-            this.cmb_AddSkillset.FormattingEnabled = true;
-            this.cmb_AddSkillset.Location = new System.Drawing.Point(12, 177);
-            this.cmb_AddSkillset.Name = "cmb_AddSkillset";
-            this.cmb_AddSkillset.Size = new System.Drawing.Size(121, 23);
-            this.cmb_AddSkillset.TabIndex = 0;
-            this.cmb_AddSkillset.SelectedIndexChanged += new System.EventHandler(this.cmb_addExist_SelectedIndexChanged);
+            this.cmb_AddExistSkillset.FormattingEnabled = true;
+            this.cmb_AddExistSkillset.Location = new System.Drawing.Point(12, 177);
+            this.cmb_AddExistSkillset.Name = "cmb_AddExistSkillset";
+            this.cmb_AddExistSkillset.Size = new System.Drawing.Size(121, 23);
+            this.cmb_AddExistSkillset.TabIndex = 0;
+            this.cmb_AddExistSkillset.SelectedIndexChanged += new System.EventHandler(this.cmb_AddExistSkillset_SelectedIndexChanged);
+            // 
+            // cmb_EditSkillset
+            // 
+            this.cmb_EditSkillset.FormattingEnabled = true;
+            this.cmb_EditSkillset.Location = new System.Drawing.Point(12, 225);
+            this.cmb_EditSkillset.Name = "cmb_EditSkillset";
+            this.cmb_EditSkillset.Size = new System.Drawing.Size(121, 23);
+            this.cmb_EditSkillset.TabIndex = 0;
+            this.cmb_EditSkillset.SelectedIndexChanged += new System.EventHandler(this.cmb_EditSkillset_SelectedIndexChanged);
             // 
             // TemplateSkillset
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.cmb_AddSkillset);
+            this.Controls.Add(this.cmb_EditSkillset);
+            this.Controls.Add(this.cmb_AddExistSkillset);
             this.Controls.Add(this.lbl_AddSkillset);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbl_EditSkillset);
-            this.Controls.Add(this.cmb_EditSkillset);
             this.Controls.Add(this.cmb_RemoveSkillset);
             this.Controls.Add(this.lbl_RemoveSkillset);
             this.Controls.Add(this.txt_Requirements);
@@ -147,10 +147,10 @@
         private System.Windows.Forms.TextBox txt_Requirements;
         private System.Windows.Forms.Label lbl_RemoveSkillset;
         private System.Windows.Forms.ComboBox cmb_RemoveSkillset;
-        private System.Windows.Forms.ComboBox cmb_EditSkillset;
         private System.Windows.Forms.Label lbl_EditSkillset;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbl_AddSkillset;
-        private System.Windows.Forms.ComboBox cmb_AddSkillset;
+        private System.Windows.Forms.ComboBox cmb_AddExistSkillset;
+        private System.Windows.Forms.ComboBox cmb_EditSkillset;
     }
 }

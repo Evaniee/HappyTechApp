@@ -58,7 +58,7 @@ namespace HappyTech.FrontEnd
         /// <param name="e">Event args</param>
         private void btn_skillset_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Open Skillset");
+            m_backEnd.NewSkillset();
         }
 
         /// <summary>
