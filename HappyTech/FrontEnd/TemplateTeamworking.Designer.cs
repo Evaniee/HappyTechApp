@@ -33,8 +33,8 @@
             this.cmb_RemoveTeamworking = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_ReturnTeamworking = new System.Windows.Forms.Button();
-            this.lst_TeamworkingRequirements = new System.Windows.Forms.ListBox();
             this.lbl_TeamworkingReq = new System.Windows.Forms.Label();
+            this.txt_teamworkingReq = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cmb_NewTeamworking
@@ -45,6 +45,7 @@
             this.cmb_NewTeamworking.Size = new System.Drawing.Size(158, 23);
             this.cmb_NewTeamworking.TabIndex = 0;
             this.cmb_NewTeamworking.Text = "Add New Requirement";
+            this.cmb_NewTeamworking.SelectedIndexChanged += new System.EventHandler(this.cmb_NewTeamworking_SelectedIndexChanged);
             // 
             // cmb_EditTeamworking
             // 
@@ -54,6 +55,7 @@
             this.cmb_EditTeamworking.Size = new System.Drawing.Size(158, 23);
             this.cmb_EditTeamworking.TabIndex = 1;
             this.cmb_EditTeamworking.Text = "Edit Requirement";
+            this.cmb_EditTeamworking.SelectedIndexChanged += new System.EventHandler(this.cmb_EditTeamworking_SelectedIndexChanged);
             // 
             // cmb_RemoveTeamworking
             // 
@@ -63,6 +65,7 @@
             this.cmb_RemoveTeamworking.Size = new System.Drawing.Size(158, 23);
             this.cmb_RemoveTeamworking.TabIndex = 2;
             this.cmb_RemoveTeamworking.Text = "Remove Teamworking";
+            this.cmb_RemoveTeamworking.SelectedIndexChanged += new System.EventHandler(this.cmb_RemoveTeamworking_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -75,44 +78,44 @@
             // 
             // btn_ReturnTeamworking
             // 
-            this.btn_ReturnTeamworking.Location = new System.Drawing.Point(356, 359);
+            this.btn_ReturnTeamworking.Location = new System.Drawing.Point(332, 365);
             this.btn_ReturnTeamworking.Name = "btn_ReturnTeamworking";
             this.btn_ReturnTeamworking.Size = new System.Drawing.Size(127, 23);
             this.btn_ReturnTeamworking.TabIndex = 4;
             this.btn_ReturnTeamworking.Text = "Return To Template";
             this.btn_ReturnTeamworking.UseVisualStyleBackColor = true;
             // 
-            // lst_TeamworkingRequirements
-            // 
-            this.lst_TeamworkingRequirements.FormattingEnabled = true;
-            this.lst_TeamworkingRequirements.ItemHeight = 15;
-            this.lst_TeamworkingRequirements.Location = new System.Drawing.Point(546, 179);
-            this.lst_TeamworkingRequirements.Name = "lst_TeamworkingRequirements";
-            this.lst_TeamworkingRequirements.Size = new System.Drawing.Size(184, 169);
-            this.lst_TeamworkingRequirements.TabIndex = 5;
-            // 
             // lbl_TeamworkingReq
             // 
             this.lbl_TeamworkingReq.AutoSize = true;
-            this.lbl_TeamworkingReq.Location = new System.Drawing.Point(576, 149);
+            this.lbl_TeamworkingReq.Location = new System.Drawing.Point(538, 121);
             this.lbl_TeamworkingReq.Name = "lbl_TeamworkingReq";
             this.lbl_TeamworkingReq.Size = new System.Drawing.Size(154, 15);
             this.lbl_TeamworkingReq.TabIndex = 6;
             this.lbl_TeamworkingReq.Text = "Teamworking Requirements";
             // 
-            // NewTeamworking
+            // txt_teamworkingReq
+            // 
+            this.txt_teamworkingReq.Location = new System.Drawing.Point(521, 154);
+            this.txt_teamworkingReq.Multiline = true;
+            this.txt_teamworkingReq.Name = "txt_teamworkingReq";
+            this.txt_teamworkingReq.Size = new System.Drawing.Size(171, 119);
+            this.txt_teamworkingReq.TabIndex = 7;   
+            this.txt_teamworkingReq.TextChanged += new System.EventHandler(this.NewTeamworking_Load);
+            // 
+            // TemplateTeamworking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txt_teamworkingReq);
             this.Controls.Add(this.lbl_TeamworkingReq);
-            this.Controls.Add(this.lst_TeamworkingRequirements);
             this.Controls.Add(this.btn_ReturnTeamworking);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmb_RemoveTeamworking);
             this.Controls.Add(this.cmb_EditTeamworking);
             this.Controls.Add(this.cmb_NewTeamworking);
-            this.Name = "NewTeamworking";
+            this.Name = "TemplateTeamworking";
             this.Text = "NewTeamworking";
             this.Load += new System.EventHandler(this.NewTeamworking_Load);
             this.ResumeLayout(false);
@@ -127,7 +130,7 @@
         private System.Windows.Forms.ComboBox cmb_RemoveTeamworking;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_ReturnTeamworking;
-        private System.Windows.Forms.ListBox lst_TeamworkingRequirements;
         private System.Windows.Forms.Label lbl_TeamworkingReq;
+        private System.Windows.Forms.TextBox txt_teamworkingReq;
     }
 }

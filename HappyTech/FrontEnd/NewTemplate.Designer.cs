@@ -118,6 +118,7 @@
             this.Controls.Add(this.btn_questions);
             this.Name = "NewTemplate";
             this.Text = "NewTemplate";
+            this.Load += new System.EventHandler(this.NewTemplate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

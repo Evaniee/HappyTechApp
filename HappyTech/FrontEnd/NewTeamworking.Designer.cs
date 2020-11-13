@@ -73,8 +73,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbl_Title;
-        private System.Windows.Forms.Button btn_Submit;
         private System.Windows.Forms.Label lbl_teamworkingTitle;
         private System.Windows.Forms.TextBox txt_teamworkingReq;
         private System.Windows.Forms.Button btn_teamworkingAdd;
