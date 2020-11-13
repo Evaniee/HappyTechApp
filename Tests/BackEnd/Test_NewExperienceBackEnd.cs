@@ -53,5 +53,34 @@ namespace Tests.BackEnd
                 Assert.Fail("No response 5 found (" + l_textValues[5] + ")");
             Assert.Pass();
         }
+
+        [Test]
+        public void test_Submit()
+        {
+            string l_experienceExpected = "C# coding";
+            string l_response1Expected = "10years+";
+            string l_response2Expected = "5years";
+            string l_response3Expected = "2years";
+            string l_response4Expected = "1year";
+            string l_response5Expected = "no experience";
+
+            List<Experience> l_allExperiences = BuisnessMetaLayer.Instance.GetDBExperience();
+            foreach(Experience i_experience in l_allExperiences) 
+            {
+                string l_experience = i_experience.experience;
+                string l_response1 = i_experience.response1;
+                string l_response2 = i_experience.response2;
+                string l_response3 = i_experience.response3;
+                string l_response4 = i_experience.response4;
+                string l_response5 = i_experience.response5;
+                if (i_experience.response1 == l_response1Expected)
+                    if (i_experience.response2 == l_response2Expected)
+                        if (i_experience.response3 == l_response3Expected) 
+                            if (i_experience.response4 == l_response4Expected)
+                                if (i_experience.response5 == l_response5Expected)
+                                    Assert.Pass();
+            }
+            Assert.Fail("Could Not Find");
+        }
     }
 }
