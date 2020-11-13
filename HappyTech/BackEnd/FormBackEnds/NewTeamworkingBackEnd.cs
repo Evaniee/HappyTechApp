@@ -14,8 +14,8 @@ namespace HappyTech.BackEnd.FormBackEnds
         public NewTeamworkingBackEnd(NewTeamworking a_frontEnd, TemplateTeamworkingBackEnd a_templateTeamworkingBackEnd)
         {
             m_frontend = a_frontEnd;
-            m_frontend.Connect(this);
             m_templateTeamworkingBackEnd = a_templateTeamworkingBackEnd;
+            m_frontend.Connect(this);
         }
 
         public void Populate(Teamworking a_teamworking)
