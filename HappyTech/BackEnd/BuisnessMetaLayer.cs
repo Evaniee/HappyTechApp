@@ -302,16 +302,64 @@ namespace HappyTech.BackEnd
         #endregion
 
         #region Job / Applicant Related Classes From Database
+        
+        public List<Applicant> GetDBApplicant()
+        {
+            if (DatabaseConnection.Instance.Open())
+            {
+                List<Applicant> l_applicants = new List<Applicant>();
+                MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT * FROM applicant");
 
-        //public List<Applicant> GetDBApplicant()
-        //{
+                while (l_dataReader.Read())
+                {
+                    Applicant l_applicant = new Applicant();
+                    l_applicant.applicant_id = l_dataReader.GetInt32(0);
+                    l_applicant.name = l_dataReader.GetString(1);
+                    l_applicant.age = l_dataReader.GetString(2);
+                    l_applicant.address = l_dataReader.GetString(3);
+                    l_applicant.email_address = l_dataReader.GetString(4);
+                    l_applicant.contact_number = l_dataReader.GetString(5);
+                    l_applicant.disabilities = l_dataReader.GetString(6);
+                    l_applicant.right_to_work = l_dataReader.GetBoolean(7);
+                    l_applicants.Add(l_applicant);
+                }
+                l_dataReader.Close();
+                DatabaseConnection.Instance.Close();
+                return l_applicants;
+            }
+            return null;
+        }
 
-        //}
+        public List<JobApplication> GetDBJobApplications()
+        {
+            // Open Connection and Read from Database
+            if (DatabaseConnection.Instance.Open())
+            {
+                List<JobApplication> l_jobApplications = new List<JobApplication>();
+                MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT * FROM job_application;");
 
-        //public List<JobApplication> GetDBJobApplications()
-        //{
-
-        //}
+                while (l_dataReader.Read())
+                {
+                    JobApplication l_jobApplication = new JobApplication();
+                    l_jobApplication.job_application_id = l_dataReader.GetInt32(0);
+                    l_jobApplication.applicant_id = l_dataReader.GetInt32(1);
+                    l_jobApplication.job_code = l_dataReader.GetString(2);
+                    if (l_dataReader.IsDBNull(3))
+                        l_jobApplication.feedback_id = 0;
+                    else
+                        l_jobApplication.feedback_id = l_dataReader.GetInt32(3);
+                    l_jobApplication.score = l_dataReader.GetInt32(4);
+                    l_jobApplication.hired = l_dataReader.GetBoolean(5);
+                    l_jobApplication.sent = l_dataReader.GetBoolean(6);
+                    l_jobApplication.contacted = l_dataReader.GetBoolean(7);
+                    l_jobApplications.Add(l_jobApplication);
+                }
+                l_dataReader.Close();
+                DatabaseConnection.Instance.Close();
+                return l_jobApplications;
+            }
+            return null;
+        }
 
         public List<JobPosition> GetDBJobPositions()
         {
@@ -371,11 +419,6 @@ namespace HappyTech.BackEnd
             }
             return null;
         }
-
-        //public List<Login> GetDBLogins()
-        //{
-
-        //}
 
         #endregion
 
