@@ -11,8 +11,8 @@ namespace HappyTech.BackEnd.FormBackEnds
     {
         NewTemplate m_frontEnd;                                     // Associated Front End
         TemplateQuestionBackEnd m_templateQuestion;                 // Associated TemplateQuestionBackEnd
-        //TemplateExperienceBackEnd m_templateExperience;           // Associated TemplateExperienceBackEnd
-        TemplateSkillsetBackEnd m_templateSkillset;               // Associated TemplateSkillsetBackEnd
+        //TemplateExperienceBackEnd m_templateExperience;             // Associated TemplateExperienceBackEnd
+        TemplateSkillsetBackEnd m_templateSkillset;                 // Associated TemplateSkillsetBackEnd
         //TemplateTeamworkingBackEnd m_templateTeamworking;         // Associated TemplateTeamworkingBackEnd
 
         private List<Question> m_questions;                         // Template's questions

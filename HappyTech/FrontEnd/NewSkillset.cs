@@ -44,5 +44,15 @@ namespace HappyTech.FrontEnd
         {
             m_newSkillsetBackEnd.Submit(txt_Skillset.Text);
         }
+
+        public List<string> textValues
+        {
+            get
+            {
+                List<string> l_textValues = new List<string>();
+                l_textValues.Add(txt_Skillset.Text);
+                return l_textValues;
+            }
+        }
     }
 }
