@@ -13,31 +13,32 @@ namespace Tests.BackEnd
     [TestFixture]
     class Test_TemplateExperienceBackEnd
     {
-        private TemplateExperienceBackEnd m_frontEnd;           // Associated Front End
+        private TemplateExperienceBackEnd m_backEnd;           // Associated Back End
         private NewTemplateBackEnd m_newTemplateBackEnd;        // NewTemplateBackEnd to inform
+        //private TemplateExperience m_templateExperience;
         List<Experience> m_experiences;
         [SetUp]
         public void Setup()
         {
-            m_frontEnd = new TemplateExperienceBackEnd(m_newTemplateBackEnd, m_experiences);
+            m_backEnd = new TemplateExperienceBackEnd(m_newTemplateBackEnd, new List<Experience>());
         }
 
         [Test]
         public void test_Open()
         {
+            m_backEnd.Open();
             FormCollection l_allForms = Application.OpenForms;
             foreach (Form i_form in l_allForms)
             {
-                if (i_form.Name == "TemplateExperienceBackEnd")
-                    Assert.Fail();
-            }
-            l_allForms = Application.OpenForms;
-            foreach (Form i_form in l_allForms)
-            {
-                if (i_form.Name == "TemplateExperienceBackEnd")
+                if (i_form.Name == "TemplateExperience")
                     Assert.Pass();
             }
-            Assert.Fail();
+            Assert.Fail("didn't open");
+        }
+
+        public void test_AddNewExperience()
+        {
+
         }
     }
 }
