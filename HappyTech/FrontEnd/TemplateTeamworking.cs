@@ -33,6 +33,7 @@ namespace HappyTech.FrontEnd
             cmb_NewTeamworking.DataSource = a_addValues;
             cmb_EditTeamworking.DataSource = a_editValues;
             cmb_RemoveTeamworking.DataSource = a_removeValues;
+            txt_teamworkingReq.Text = a_textBoxValue;
             m_update = false;
         }
 

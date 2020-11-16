@@ -96,11 +96,12 @@
             // 
             // txt_teamworkingReq
             // 
+            this.txt_teamworkingReq.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txt_teamworkingReq.Location = new System.Drawing.Point(521, 154);
             this.txt_teamworkingReq.Multiline = true;
             this.txt_teamworkingReq.Name = "txt_teamworkingReq";
             this.txt_teamworkingReq.Size = new System.Drawing.Size(171, 119);
-            this.txt_teamworkingReq.TabIndex = 7;   
+            this.txt_teamworkingReq.TabIndex = 7;
             this.txt_teamworkingReq.TextChanged += new System.EventHandler(this.NewTeamworking_Load);
             // 
             // TemplateTeamworking

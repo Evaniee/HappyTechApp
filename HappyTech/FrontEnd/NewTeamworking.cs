@@ -12,17 +12,17 @@ namespace HappyTech.FrontEnd
 {
     public partial class NewTeamworking : Form
     {
-        private NewTeamworkingBackEnd m_backEnd;
+        private NewTeamworkingBackEnd m_NewTeamworkingBackEnd;
         public NewTeamworking(TemplateTeamworkingBackEnd a_templateTeamworkingBackEnd, Teamworking a_teamworking)
         {
             new NewTeamworkingBackEnd(this, a_templateTeamworkingBackEnd);
             InitializeComponent();
-            m_backEnd.Populate(a_teamworking);
+            m_NewTeamworkingBackEnd.Populate(a_teamworking);
         }
 
-        public void Connect(NewTeamworkingBackEnd a_backEnd)
+        public void Connect(NewTeamworkingBackEnd a_NewTeamworkingBackEnd)
         {
-            m_backEnd = a_backEnd;
+            m_NewTeamworkingBackEnd = a_NewTeamworkingBackEnd;
         }
 
         public void Populate(string a_teamworking)
@@ -33,13 +33,13 @@ namespace HappyTech.FrontEnd
 
         private void btn_teamworkingAdd_Click(object sender, EventArgs e)
         {
-            m_backEnd.Submit(txt_teamworkingReq.Text);
+            m_NewTeamworkingBackEnd.Submit(txt_teamworkingReq.Text);
         }
 
 
         /// <summary>
         /// Getter for back end
         /// </summary>
-        public NewTeamworkingBackEnd BackEnd { get { return m_backEnd; } }
+        public NewTeamworkingBackEnd BackEnd { get { return m_NewTeamworkingBackEnd; } }
     }
 }
