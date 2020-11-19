@@ -41,5 +41,19 @@ namespace HappyTech.FrontEnd
         /// Getter for back end
         /// </summary>
         public NewTeamworkingBackEnd BackEnd { get { return m_NewTeamworkingBackEnd; } }
+
+
+        
+        public List<string> textValues
+        {
+            get
+            {
+                List<string> l_textValues = new List<string>();
+                l_textValues.Add(txt_teamworkingReq.Text);
+                return l_textValues;
+            }
+        }
+        
     }
 }
+
