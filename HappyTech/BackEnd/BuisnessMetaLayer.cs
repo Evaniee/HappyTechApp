@@ -213,20 +213,74 @@ namespace HappyTech.BackEnd
 
         #region Skillset Classes From Database
 
-        //public List<Skillset> GetDBSkillset()
-        //{
+        public List<Skillset> GetDBSkillset()
+        {
+            // Open Connection and Read from Database
+            if (DatabaseConnection.Instance.Open())
+            {
+                List<Skillset> l_skillsets = new List<Skillset>();
+                MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT * FROM skillset;");
 
-        //}
+                while (l_dataReader.Read())
+                {
+                    Skillset l_skillset = new Skillset();
+                    l_skillset.skillset_id = l_dataReader.GetInt32(0);
+                    l_skillset.skillset = l_dataReader.GetString(1);
+                    l_skillsets.Add(l_skillset);
+                }
+                l_dataReader.Close();
+                DatabaseConnection.Instance.Close();
+                return l_skillsets;
+            }
+            return null;
+        }
 
-        //public List<FeedbackSkillset> GetDBFeedbackSkillset()
-        //{
+        public List<FeedbackSkillset> GetDBFeedbackSkillset()
+        {
+            // Open Connection and Read from Database
+            if (DatabaseConnection.Instance.Open())
+            {
+                List<FeedbackSkillset> l_feedbackSkillsets = new List<FeedbackSkillset>();
+                MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT * FROM feedback_skillset;");
 
-        //}
+                while (l_dataReader.Read())
+                {
+                    FeedbackSkillset l_feedbackSkillset = new FeedbackSkillset();
+                    l_feedbackSkillset.feedback_skillset_id = l_dataReader.GetInt32(0);
+                    l_feedbackSkillset.feedback_id = l_dataReader.GetInt32(1);
+                    l_feedbackSkillset.skillset_id = l_dataReader.GetInt32(2);
+                    l_feedbackSkillset.achieved = l_dataReader.GetBoolean(2);
+                    l_feedbackSkillsets.Add(l_feedbackSkillset);
+                }
+                l_dataReader.Close();
+                DatabaseConnection.Instance.Close();
+                return l_feedbackSkillsets;
+            }
+            return null;
+        }
 
-        //public List<TemplateSkillset> GetDBTemplateSkillset()
-        //{
+        public List<TemplateSkillset> GetDBTemplateSkillset()
+        {
+            // Open Connection and Read from Database
+            if (DatabaseConnection.Instance.Open())
+            {
+                List<TemplateSkillset> l_templateSkillsets = new List<TemplateSkillset>();
+                MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT * FROM template_skillset;");
 
-        //}
+                while (l_dataReader.Read())
+                {
+                    TemplateSkillset l_templateSkillset = new TemplateSkillset();
+                    l_templateSkillset.template_skillset_id = l_dataReader.GetInt32(0);
+                    l_templateSkillset.template_id = l_dataReader.GetInt32(1);
+                    l_templateSkillset.skillset_id = l_dataReader.GetInt32(2);
+                    l_templateSkillsets.Add(l_templateSkillset);
+                }
+                l_dataReader.Close();
+                DatabaseConnection.Instance.Close();
+                return l_templateSkillsets;
+            }
+            return null;
+        }
 
         #endregion
 

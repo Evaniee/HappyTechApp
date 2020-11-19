@@ -12,7 +12,7 @@ namespace HappyTech.BackEnd.FormBackEnds
         NewTemplate m_frontEnd;                                     // Associated Front End
         TemplateQuestionBackEnd m_templateQuestion;                 // Associated TemplateQuestionBackEnd
         //TemplateExperienceBackEnd m_templateExperience;           // Associated TemplateExperienceBackEnd
-        //TemplateSkillsetBackEnd m_templateSkillset;               // Associated TemplateSkillsetBackEnd
+        TemplateSkillsetBackEnd m_templateSkillset;               // Associated TemplateSkillsetBackEnd
         //TemplateTeamworkingBackEnd m_templateTeamworking;         // Associated TemplateTeamworkingBackEnd
 
         private List<Question> m_questions;                         // Template's questions
@@ -31,7 +31,7 @@ namespace HappyTech.BackEnd.FormBackEnds
             m_frontEnd.Connect(this);
             m_templateQuestion = new TemplateQuestionBackEnd(this, m_questions);
             //m_templateExperience = new TemplateExperienceBackEnd(this, m_experiences);
-            //m_templateSkillset = new TemplateSkillsetBackEnd(this, m_skillsets);
+            m_templateSkillset = new TemplateSkillsetBackEnd(this, m_skillsets);
             //m_templateTeamworking = new TemplateTeamworkingBackEnd(this, m_teamworkings);
         }
 
@@ -56,7 +56,8 @@ namespace HappyTech.BackEnd.FormBackEnds
         /// </summary>
         public void NewSkillset()
         {
-            //new NewSkillset().Show();
+            //new NewSkillset().Show()
+            m_templateSkillset.Open();
         }
 
         /// <summary>
