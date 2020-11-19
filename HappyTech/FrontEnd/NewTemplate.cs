@@ -68,7 +68,8 @@ namespace HappyTech.FrontEnd
         /// <param name="e">Event args</param>
         private void btn_teamworking_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Open Teamworking");
+           // MessageBox.Show("Open Teamworking");
+            m_backEnd.NewTeamworking();
         }
 
         /// <summary>
@@ -85,5 +86,10 @@ namespace HappyTech.FrontEnd
         /// Get the Associated BackEnd
         /// </summary>
         public NewTemplateBackEnd BackEnd { get { return m_backEnd; } }
+
+        private void NewTemplate_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
