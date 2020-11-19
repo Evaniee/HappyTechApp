@@ -14,6 +14,7 @@ namespace Tests
         [Test]
         public void Test_Properties()
         {
+            // Just putting in a comment to test my GitHub
             Dictionary<string, string> l_properties = DatabaseConnection.Instance.Properties();
             string l_value;
             bool l_failed = false;

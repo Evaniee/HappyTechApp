@@ -75,5 +75,22 @@ namespace HappyTech.FrontEnd
         /// </summary>
         public NewQuestionBackEnd BackEnd { get { return m_newQuestionBackEnd; } }
 
+
+        #region
+        public List<string> textValues
+        {
+            get
+            {
+                List<string> l_textValues = new List<string>();
+                l_textValues.Add(txt_question.Text);
+                l_textValues.Add(txt_reponse1.Text);
+                l_textValues.Add(txt_reponse2.Text);
+                l_textValues.Add(txt_reponse3.Text);
+                l_textValues.Add(txt_reponse4.Text);
+                l_textValues.Add(txt_reponse5.Text);
+                return l_textValues;
+            }
+        }
+        #endregion 
     }
 }
