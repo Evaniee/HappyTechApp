@@ -15,8 +15,7 @@ namespace Tests.BackEnd
     {
         private TemplateExperienceBackEnd m_backEnd;           // Associated Back End
         private NewTemplateBackEnd m_newTemplateBackEnd;        // NewTemplateBackEnd to inform
-        //private TemplateExperience m_templateExperience;
-        List<Experience> m_experiences;
+
         [SetUp]
         public void Setup()
         {
@@ -39,7 +38,20 @@ namespace Tests.BackEnd
         [Test]
         public void test_AddNewExperience()
         {
-            m_backEnd.AddNewExperience(null);
+            m_backEnd.AddNewExperience("New Experience");
+            FormCollection l_allForms = Application.OpenForms;
+            foreach (Form i_form in l_allForms)
+            {
+                if (i_form.Name == "NewExperience")
+                    Assert.Pass();
+            }
+            Assert.Fail("didn't open");
+        }
+
+        [Test]
+        public void test_AddExistingExperience()
+        {
+            m_backEnd.AddExistingExperience(null);
             FormCollection l_allForms = Application.OpenForms;
             foreach (Form i_form in l_allForms)
             {

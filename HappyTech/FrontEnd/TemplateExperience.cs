@@ -86,5 +86,7 @@ namespace HappyTech.FrontEnd
         /// </summary>
         public TemplateExperienceBackEnd BackEnd { get { return m_templateExperienceBackEnd; } }
 
+        public String TextBox { get { return txt_selected.Text; } }
+
     }
 }

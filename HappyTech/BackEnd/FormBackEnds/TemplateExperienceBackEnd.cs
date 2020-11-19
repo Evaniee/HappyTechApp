@@ -150,5 +150,7 @@ namespace HappyTech.BackEnd.FormBackEnds
 
             m_frontEnd.Update(l_addValues, l_editValues, l_removeValues, l_textBoxValue);
         }
+
+        public FrontEnd.TemplateExperience FrontEnd { get { return m_frontEnd; } }
     }
 }
