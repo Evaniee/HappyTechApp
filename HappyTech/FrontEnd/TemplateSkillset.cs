@@ -13,7 +13,7 @@ namespace HappyTech.FrontEnd
 {
     public partial class TemplateSkillset : Form
     {
-        private TemplateSkillsetBackEnd m_templateSkillsetBackEnd;          
+        private TemplateSkillsetBackEnd m_templateSkillsetBackEnd;
         private bool m_update;
 
         public TemplateSkillset(TemplateSkillsetBackEnd a_templateSkillsetBackEnd)
@@ -55,12 +55,12 @@ namespace HappyTech.FrontEnd
                 m_templateSkillsetBackEnd.RemoveSkillset(cmb_RemoveSkillset.Text);
         }
 
-        public TemplateSkillsetBackEnd BackEnd 
-        { 
-            get 
-            { 
-                return m_templateSkillsetBackEnd; 
-            } 
+        public TemplateSkillsetBackEnd BackEnd
+        {
+            get
+            {
+                return m_templateSkillsetBackEnd;
+            }
         }
 
 

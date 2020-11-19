@@ -32,12 +32,12 @@ namespace HappyTech.FrontEnd
                 txt_Skillset.Text = a_skillset;
         }
 
-        public NewSkillsetBackEnd BackEnd 
-        { 
-            get 
-            { 
-                return m_newSkillsetBackEnd; 
-            } 
+        public NewSkillsetBackEnd BackEnd
+        {
+            get
+            {
+                return m_newSkillsetBackEnd;
+            }
         }
 
         private void btn_Submit_Click_1(object sender, EventArgs e)
