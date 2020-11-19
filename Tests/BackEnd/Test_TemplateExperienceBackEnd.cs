@@ -36,9 +36,17 @@ namespace Tests.BackEnd
             Assert.Fail("didn't open");
         }
 
+        [Test]
         public void test_AddNewExperience()
         {
-
+            m_backEnd.AddNewExperience(null);
+            FormCollection l_allForms = Application.OpenForms;
+            foreach (Form i_form in l_allForms)
+            {
+                if (i_form.Name == "NewExperience")
+                    Assert.Pass();
+            }
+            Assert.Fail("didn't open");
         }
     }
 }
