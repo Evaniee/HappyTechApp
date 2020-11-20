@@ -37,6 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cmb_addExist = new System.Windows.Forms.ComboBox();
+            this.btn_ReturnExperience = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_experience
@@ -119,11 +120,22 @@
             this.cmb_addExist.TabIndex = 0;
             this.cmb_addExist.SelectedIndexChanged += new System.EventHandler(this.cmb_addExist_SelectedIndexChanged);
             // 
+            // btn_ReturnExperience
+            // 
+            this.btn_ReturnExperience.Location = new System.Drawing.Point(307, 363);
+            this.btn_ReturnExperience.Name = "btn_ReturnExperience";
+            this.btn_ReturnExperience.Size = new System.Drawing.Size(127, 23);
+            this.btn_ReturnExperience.TabIndex = 4;
+            this.btn_ReturnExperience.Text = "Return To Template";
+            this.btn_ReturnExperience.UseVisualStyleBackColor = true;
+            this.btn_ReturnExperience.Click += new System.EventHandler(this.btn_ReturnExperience_Click);
+            // 
             // TemplateExperience
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_ReturnExperience);
             this.Controls.Add(this.cmb_addExist);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -152,5 +164,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmb_addExist;
         private System.Windows.Forms.ComboBox cmb_remove;
+        private System.Windows.Forms.Button btn_ReturnExperience;
     }
 }

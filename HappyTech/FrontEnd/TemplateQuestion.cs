@@ -85,5 +85,15 @@ namespace HappyTech.FrontEnd
         /// Get the associated back end
         /// </summary>
         public TemplateQuestionBackEnd BackEnd { get { return m_templateQuestionBackEnd; } }
+
+        /// <summary>
+        /// Occurs when ReturnQuestion button is pressed
+        /// </summary>
+        /// <param name="sender">Object that sent event</param>
+        /// <param name="e">Event arguments</param>
+        private void btn_ReturnQuestion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

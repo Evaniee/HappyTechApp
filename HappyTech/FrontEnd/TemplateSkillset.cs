@@ -63,15 +63,14 @@ namespace HappyTech.FrontEnd
             }
         }
 
-
-
-
-
-
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Occurs when ReturnSkillset button is pressed
+        /// </summary>
+        /// <param name="sender">Object that sent event</param>
+        /// <param name="e">Event arguments</param>
+        private void btn_ReturnSkillset_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
         }
     }
 }

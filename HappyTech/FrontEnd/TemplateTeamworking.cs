@@ -78,6 +78,16 @@ namespace HappyTech.FrontEnd
         /// Get the associated back end
         /// </summary>
         public TemplateTeamworkingBackEnd BackEnd { get { return m_templateTeamworkingBackEnd; } }
+
+        /// <summary>
+        /// Occurs when ReturnTeamworking button is pressed
+        /// </summary>
+        /// <param name="sender">Object that sent event</param>
+        /// <param name="e">Event arguments</param>
+        private void btn_ReturnTeamworking_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 
 }

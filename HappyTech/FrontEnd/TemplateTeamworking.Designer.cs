@@ -84,6 +84,7 @@
             this.btn_ReturnTeamworking.TabIndex = 4;
             this.btn_ReturnTeamworking.Text = "Return To Template";
             this.btn_ReturnTeamworking.UseVisualStyleBackColor = true;
+            this.btn_ReturnTeamworking.Click += new System.EventHandler(this.btn_ReturnTeamworking_Click);
             // 
             // lbl_TeamworkingReq
             // 

@@ -10,10 +10,10 @@ namespace Tests.DatabaseClasses
     [TestFixture]
     class Test_NewSkillset
     {
-        private NewSkillsetBackEnd m_newSkillset;
+        //private NewSkillsetBackEnd m_newSkillset;
 
-        [SetUp]
-        ;
+        //[SetUp]
+        
 
 
 
