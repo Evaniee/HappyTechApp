@@ -43,7 +43,6 @@ namespace HappyTech.BackEnd.FormBackEnds
             string l_selectedCode = l_selectedTextArray[0];
             List<JobPosition> l_allPositons = BuisnessMetaLayer.Instance.GetDBJobPositions();
             JobPosition l_position = l_allPositons.Find(x => x.job_code == l_selectedCode);
-            MessageBox.Show(l_position.job_code + ": " + l_position.title + "\nTemplate ID:" + l_position.template_id + "\n" + l_position.description);
             new Position(l_position).Show();
         }
     }
