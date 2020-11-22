@@ -87,9 +87,9 @@ namespace HappyTech.FrontEnd
         /// </summary>
         public NewTemplateBackEnd BackEnd { get { return m_backEnd; } }
 
-        private void NewTemplate_Load(object sender, EventArgs e)
-        {
-
-        }
+        /// <summary>
+        /// Get the Title of the Template
+        /// </summary>
+        public string TemplateTitle { get { return txt_title.Text; } }
     }
 }
