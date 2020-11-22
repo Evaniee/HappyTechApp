@@ -40,8 +40,6 @@ namespace HappyTech.BackEnd
             {
                 MessageBox.Show("Emails cannot be sent. Please check the file at " + @m_propertiesPath + " is correct and try again.");
             }
-            // REMOVE FOR FINAL
-            Debug.WriteLine("Instantiated EmailClient with the following properties\nHost: {0}\nPort: {1}\nEmailAddress: {2}\nPassword: {3}", l_properties["Host"], l_properties["Port"], l_properties["EmailAddress"], l_properties["Password"]);
         }
 
         /// <summary>
