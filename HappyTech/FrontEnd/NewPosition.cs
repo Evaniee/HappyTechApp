@@ -69,5 +69,10 @@ namespace HappyTech.FrontEnd
         /// Getter for back end
         /// </summary>
         public NewPositionBackEnd BackEnd { get { return m_backEnd; } }
+
+        private void btn_updateCmb_Click(object sender, EventArgs e)
+        {
+            Populate_cmb_jobTemplate(m_backEnd.PopulateJobTemplate());
+        }
     }
 }
