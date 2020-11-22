@@ -73,64 +73,57 @@
             // 
             // lbl_name
             // 
-            this.lbl_name.AutoSize = true;
-            this.lbl_name.Location = new System.Drawing.Point(9, 131);
+            this.lbl_name.Location = new System.Drawing.Point(10, 130);
             this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(42, 15);
+            this.lbl_name.Size = new System.Drawing.Size(100, 15);
             this.lbl_name.TabIndex = 3;
             this.lbl_name.Text = "Name:";
             // 
             // lbl_hired
             // 
-            this.lbl_hired.AutoSize = true;
-            this.lbl_hired.Location = new System.Drawing.Point(120, 131);
+            this.lbl_hired.Location = new System.Drawing.Point(120, 130);
             this.lbl_hired.Name = "lbl_hired";
-            this.lbl_hired.Size = new System.Drawing.Size(39, 15);
+            this.lbl_hired.Size = new System.Drawing.Size(50, 15);
             this.lbl_hired.TabIndex = 3;
             this.lbl_hired.Text = "Hired:";
             // 
             // lbl_profile
             // 
-            this.lbl_profile.AutoSize = true;
-            this.lbl_profile.Location = new System.Drawing.Point(170, 131);
+            this.lbl_profile.Location = new System.Drawing.Point(170, 130);
             this.lbl_profile.Name = "lbl_profile";
-            this.lbl_profile.Size = new System.Drawing.Size(44, 15);
+            this.lbl_profile.Size = new System.Drawing.Size(100, 15);
             this.lbl_profile.TabIndex = 3;
             this.lbl_profile.Text = "Profile:";
             // 
             // lbl_feedback
             // 
-            this.lbl_feedback.AutoSize = true;
-            this.lbl_feedback.Location = new System.Drawing.Point(280, 131);
+            this.lbl_feedback.Location = new System.Drawing.Point(280, 130);
             this.lbl_feedback.Name = "lbl_feedback";
-            this.lbl_feedback.Size = new System.Drawing.Size(60, 15);
+            this.lbl_feedback.Size = new System.Drawing.Size(100, 15);
             this.lbl_feedback.TabIndex = 3;
             this.lbl_feedback.Text = "Feedback:";
             // 
             // lbl_score
             // 
-            this.lbl_score.AutoSize = true;
-            this.lbl_score.Location = new System.Drawing.Point(390, 131);
+            this.lbl_score.Location = new System.Drawing.Point(390, 130);
             this.lbl_score.Name = "lbl_score";
-            this.lbl_score.Size = new System.Drawing.Size(39, 15);
+            this.lbl_score.Size = new System.Drawing.Size(50, 15);
             this.lbl_score.TabIndex = 3;
             this.lbl_score.Text = "Score:";
             // 
             // lbl_sent
             // 
-            this.lbl_sent.AutoSize = true;
-            this.lbl_sent.Location = new System.Drawing.Point(450, 131);
+            this.lbl_sent.Location = new System.Drawing.Point(450, 130);
             this.lbl_sent.Name = "lbl_sent";
-            this.lbl_sent.Size = new System.Drawing.Size(33, 15);
+            this.lbl_sent.Size = new System.Drawing.Size(50, 15);
             this.lbl_sent.TabIndex = 3;
             this.lbl_sent.Text = "Sent:";
             // 
             // lbl_contacted
             // 
-            this.lbl_contacted.AutoSize = true;
-            this.lbl_contacted.Location = new System.Drawing.Point(510, 131);
+            this.lbl_contacted.Location = new System.Drawing.Point(510, 130);
             this.lbl_contacted.Name = "lbl_contacted";
-            this.lbl_contacted.Size = new System.Drawing.Size(65, 15);
+            this.lbl_contacted.Size = new System.Drawing.Size(100, 15);
             this.lbl_contacted.TabIndex = 3;
             this.lbl_contacted.Text = "Contacted:";
             // 
