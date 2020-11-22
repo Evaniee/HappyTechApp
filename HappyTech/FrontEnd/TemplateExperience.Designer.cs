@@ -146,7 +146,7 @@
             this.Controls.Add(this.txt_selected);
             this.Controls.Add(this.lbl_experience);
             this.Name = "TemplateExperience";
-            this.Text = "TemplateExperience";
+            this.Text = "Template Experience";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -66,6 +66,7 @@
             this.Controls.Add(this.txt_teamworkingReq);
             this.Controls.Add(this.lbl_teamworkingTitle);
             this.Name = "NewTeamworking";
+            this.Text = "New Teamworking";
             this.ResumeLayout(false);
             this.PerformLayout();
 

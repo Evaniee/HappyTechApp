@@ -159,7 +159,7 @@
             this.Controls.Add(this.lbl_jobTitle);
             this.Controls.Add(this.lbl_newPosition);
             this.Name = "NewPosition";
-            this.Text = "NewPosition";
+            this.Text = "New Position";
             this.ResumeLayout(false);
             this.PerformLayout();
 

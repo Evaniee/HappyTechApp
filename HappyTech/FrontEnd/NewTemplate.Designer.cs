@@ -117,7 +117,7 @@
             this.Controls.Add(this.btn_experience);
             this.Controls.Add(this.btn_questions);
             this.Name = "NewTemplate";
-            this.Text = "NewTemplate";
+            this.Text = "New Template";
             this.ResumeLayout(false);
             this.PerformLayout();
 

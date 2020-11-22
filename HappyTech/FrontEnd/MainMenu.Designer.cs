@@ -97,7 +97,7 @@
             this.Controls.Add(this.btn_currentPosition);
             this.Controls.Add(this.btn_newPosition);
             this.Name = "MainMenu";
-            this.Text = "MainMenu";
+            this.Text = "Main Menu";
             this.Load += new System.EventHandler(this.MainMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

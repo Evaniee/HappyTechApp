@@ -164,7 +164,7 @@
             this.Location = new System.Drawing.Point(295, 175);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Position";
-            this.Text = "Feedback:";
+            this.Text = "Position";
             this.ResumeLayout(false);
             this.PerformLayout();
 
