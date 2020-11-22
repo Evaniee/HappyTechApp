@@ -157,7 +157,6 @@
         private System.Windows.Forms.Label lbl_experience;
         private System.Windows.Forms.TextBox txt_selected;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmd_remove;
         private System.Windows.Forms.ComboBox cmb_addEdit;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

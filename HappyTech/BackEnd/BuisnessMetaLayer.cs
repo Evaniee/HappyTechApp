@@ -443,10 +443,32 @@ namespace HappyTech.BackEnd
 
         #region Other Classes From Database
 
-        //public List<Feedback> GetDBFeedback()
-        //{
+        /// <summary>
+        /// Gets all Feedbacks from the feedback table
+        /// </summary>
+        /// <returns>List of feedbacks</returns>
+        public List<Feedback> GetDBFeedback()
+        {
+            // Open Connection and Read from Database
+            if (DatabaseConnection.Instance.Open())
+            {
+                List<Feedback> l_feedbacks = new List<Feedback>();
+                MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT * FROM feedback;");
 
-        //}
+                while (l_dataReader.Read())
+                {
+                    Feedback l_feedback = new Feedback();
+                    l_feedback.feedback_id = l_dataReader.GetInt32(0);
+                    l_feedback.template_id = l_dataReader.GetInt32(1);
+                    l_feedback.comments = l_dataReader.GetString(2);
+                    l_feedbacks.Add(l_feedback);
+                }
+                l_dataReader.Close();
+                DatabaseConnection.Instance.Close();
+                return l_feedbacks;
+            }
+            return null;
+        }
 
         /// <summary>
         /// Gets all Templates from the template table
