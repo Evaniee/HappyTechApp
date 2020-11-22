@@ -88,5 +88,14 @@ namespace HappyTech.FrontEnd
 
         public String TextBox { get { return txt_selected.Text; } }
 
+        /// <summary>
+        /// Occurs when ReturnExperience button is pressed
+        /// </summary>
+        /// <param name="sender">Object that sent event</param>
+        /// <param name="e">Event arguments</param>
+        private void btn_ReturnExperience_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

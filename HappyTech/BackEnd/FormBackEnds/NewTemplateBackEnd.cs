@@ -105,7 +105,42 @@ namespace HappyTech.BackEnd.FormBackEnds
 
         public void Submit()
         {
-            MessageBox.Show("Submitted");
+            // Add Template
+            string l_sqlString = "INSERT INTO happy_tech.template VALUES (null, '" + m_frontEnd.TemplateTitle + "');";
+            BuisnessMetaLayer.Instance.Insert(l_sqlString);
+            
+            // Find Template
+            Template l_insertedTemplate = BuisnessMetaLayer.Instance.GetDBTemplate().Find(x => x.title == m_frontEnd.TemplateTitle);
+
+            // Add Questions
+            foreach(Question i_question in m_questions)
+            {
+                l_sqlString = "INSERT INTO happy_tech.template_questions VALUES (null, " + l_insertedTemplate.template_id + ", " + i_question.question_id + ");";
+                BuisnessMetaLayer.Instance.Insert(l_sqlString);
+            }
+
+            // Add Experiences
+            foreach (Experience i_experience in m_experiences)
+            {
+                l_sqlString = "INSERT INTO happy_tech.template_experience VALUES (null, " + l_insertedTemplate.template_id + ", " + i_experience.experience_id + ");";
+                BuisnessMetaLayer.Instance.Insert(l_sqlString);
+            }
+
+            // Add Skillsets
+            foreach (Skillset i_skillset in m_skillsets)
+            {
+                l_sqlString = "INSERT INTO happy_tech.template_skillset VALUES (null, " + l_insertedTemplate.template_id + ", " + i_skillset.skillset_id + ");";
+                BuisnessMetaLayer.Instance.Insert(l_sqlString);
+            }
+
+            // Add Teamworkings
+            foreach (Teamworking i_teamworking in m_teamworkings)
+            {
+                l_sqlString = "INSERT INTO happy_tech.template_teamworking VALUES (null, " + l_insertedTemplate.template_id + ", " + i_teamworking.teamworking_id + ");";
+                BuisnessMetaLayer.Instance.Insert(l_sqlString);
+            }
+            MessageBox.Show("Submitted!");
+            m_frontEnd.Close();
         }
     }
 }

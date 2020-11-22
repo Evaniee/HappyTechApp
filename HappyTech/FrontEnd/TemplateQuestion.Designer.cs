@@ -37,6 +37,7 @@
             this.lbl_remove = new System.Windows.Forms.Label();
             this.txt_selected = new System.Windows.Forms.TextBox();
             this.lbl_questions = new System.Windows.Forms.Label();
+            this.btn_ReturnQuestion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmb_addExist
@@ -119,11 +120,22 @@
             this.lbl_questions.TabIndex = 4;
             this.lbl_questions.Text = "Questions:";
             // 
+            // btn_ReturnQuestion
+            // 
+            this.btn_ReturnQuestion.Location = new System.Drawing.Point(321, 354);
+            this.btn_ReturnQuestion.Name = "btn_ReturnQuestion";
+            this.btn_ReturnQuestion.Size = new System.Drawing.Size(127, 23);
+            this.btn_ReturnQuestion.TabIndex = 4;
+            this.btn_ReturnQuestion.Text = "Return To Template";
+            this.btn_ReturnQuestion.UseVisualStyleBackColor = true;
+            this.btn_ReturnQuestion.Click += new System.EventHandler(this.btn_ReturnQuestion_Click);
+            // 
             // TemplateQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_ReturnQuestion);
             this.Controls.Add(this.lbl_questions);
             this.Controls.Add(this.txt_selected);
             this.Controls.Add(this.lbl_remove);
@@ -151,5 +163,6 @@
         private System.Windows.Forms.Label lbl_remove;
         private System.Windows.Forms.TextBox txt_selected;
         private System.Windows.Forms.Label lbl_questions;
+        private System.Windows.Forms.Button btn_ReturnQuestion;
     }
 }

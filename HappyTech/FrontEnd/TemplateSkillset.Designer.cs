@@ -37,6 +37,7 @@
             this.lbl_AddSkillset = new System.Windows.Forms.Label();
             this.cmb_AddExistSkillset = new System.Windows.Forms.ComboBox();
             this.cmb_EditSkillset = new System.Windows.Forms.ComboBox();
+            this.btn_ReturnSkillset = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_Subtitle
@@ -56,7 +57,7 @@
             this.txt_Requirements.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txt_Requirements.Size = new System.Drawing.Size(532, 115);
             this.txt_Requirements.TabIndex = 3;
-            this.txt_Requirements.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+
             // 
             // lbl_RemoveSkillset
             // 
@@ -120,6 +121,16 @@
             this.cmb_EditSkillset.TabIndex = 0;
             this.cmb_EditSkillset.SelectedIndexChanged += new System.EventHandler(this.cmb_EditSkillset_SelectedIndexChanged);
             // 
+            // btn_ReturnSkillset
+            // 
+            this.btn_ReturnSkillset.Location = new System.Drawing.Point(332, 365);
+            this.btn_ReturnSkillset.Name = "btn_ReturnSkillset";
+            this.btn_ReturnSkillset.Size = new System.Drawing.Size(127, 23);
+            this.btn_ReturnSkillset.TabIndex = 4;
+            this.btn_ReturnSkillset.Text = "Return To Template";
+            this.btn_ReturnSkillset.UseVisualStyleBackColor = true;
+            this.btn_ReturnSkillset.Click += new System.EventHandler(this.btn_ReturnSkillset_Click);
+            // 
             // TemplateSkillset
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -134,6 +145,7 @@
             this.Controls.Add(this.lbl_RemoveSkillset);
             this.Controls.Add(this.txt_Requirements);
             this.Controls.Add(this.lbl_Subtitle);
+            this.Controls.Add(this.btn_ReturnSkillset);
             this.Name = "TemplateSkillset";
             this.Text = "TemplateSkillset";
             this.ResumeLayout(false);
@@ -152,5 +164,6 @@
         private System.Windows.Forms.Label lbl_AddSkillset;
         private System.Windows.Forms.ComboBox cmb_AddExistSkillset;
         private System.Windows.Forms.ComboBox cmb_EditSkillset;
+        private System.Windows.Forms.Button btn_ReturnSkillset;
     }
 }
