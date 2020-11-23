@@ -75,7 +75,10 @@ namespace HappyTech.FrontEnd
         /// </summary>
         public NewExperienceBackEnd BackEnd { get { return m_newExperienceBackEnd; } }
 
-        #region
+        #region NUit test class
+        /// <summary>
+        /// Method created to enable NUit tests
+        /// </summary>
         public List<string> textValues
         {
             get

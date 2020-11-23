@@ -10,8 +10,8 @@ namespace HappyTech.BackEnd.FormBackEnds
 {
     public class TemplateExperienceBackEnd
     {
-        FrontEnd.TemplateExperience m_frontEnd;           // Associated Front End
-        NewTemplateBackEnd m_newTemplateBackEnd;        // NewTemplateBackEnd to inform
+        FrontEnd.TemplateExperience m_frontEnd;             // Associated Front End
+        NewTemplateBackEnd m_newTemplateBackEnd;            // NewTemplateBackEnd to inform
         List<Experience> m_experiences;                     // Template's experiences
 
         /// <summary>
@@ -25,11 +25,18 @@ namespace HappyTech.BackEnd.FormBackEnds
             m_newTemplateBackEnd = a_newTemplateBackEnd;
         }
 
+        /// <summary>
+        /// connection method linking back end to front end
+        /// </summary>
+        /// <param name="a_templateExperience">database class for templateExperience </param>
         public void Connect(FrontEnd.TemplateExperience a_templateExperience)
         {
             m_frontEnd = a_templateExperience;
         }
 
+        /// <summary>
+        /// calls frontend to open
+        /// </summary>
         public void Open()
         {
             m_frontEnd.Show();
@@ -103,6 +110,10 @@ namespace HappyTech.BackEnd.FormBackEnds
             m_newTemplateBackEnd.UpdateExperiences(m_experiences);
         }
 
+        /// <summary>
+        /// adds experiences from Experience database class
+        /// </summary>
+        /// <param name="a_experience">experience as a value</param>
         public void AddExperience(Experience a_experience)
         {
             m_experiences.Add(a_experience);
@@ -150,7 +161,6 @@ namespace HappyTech.BackEnd.FormBackEnds
 
             m_frontEnd.Update(l_addValues, l_editValues, l_removeValues, l_textBoxValue);
         }
-
         public FrontEnd.TemplateExperience FrontEnd { get { return m_frontEnd; } }
     }
 }

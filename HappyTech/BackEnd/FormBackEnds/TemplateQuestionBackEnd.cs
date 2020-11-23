@@ -25,11 +25,18 @@ namespace HappyTech.BackEnd.FormBackEnds
             m_newTemplateBackEnd = a_newTemplateBackEnd;            
         }
 
+        /// <summary>
+        /// connection method linking back end to front end
+        /// </summary>
+        /// <param name="a_templateQuestion">database class for templateQuestion</param>
         public void Connect(FrontEnd.TemplateQuestion a_templateQuestion)
         {
             m_frontEnd = a_templateQuestion;
         }
 
+        /// <summary>
+        /// calls front end to open
+        /// </summary>
         public void Open()
         {
             m_frontEnd.Show();
@@ -103,6 +110,10 @@ namespace HappyTech.BackEnd.FormBackEnds
             m_newTemplateBackEnd.UpdateQuestions(m_questions);
         }
 
+        /// <summary>
+        /// adds Question from Question database class
+        /// </summary>
+        /// <param name="a_question">Question as a value</param>
         public void AddQuestion(Question a_question)
         {
             m_questions.Add(a_question);

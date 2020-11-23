@@ -9,7 +9,7 @@ namespace HappyTech.BackEnd.FormBackEnds
     public class NewSkillsetBackEnd
     {
         NewSkillset m_frontend;                                 // Associated Front End
-        TemplateSkillsetBackEnd m_templateSkillsetBackEnd;
+        TemplateSkillsetBackEnd m_templateSkillsetBackEnd;      
 
         public NewSkillsetBackEnd(NewSkillset a_frontEnd, TemplateSkillsetBackEnd a_templateSkillsetBackEnd)
         {
