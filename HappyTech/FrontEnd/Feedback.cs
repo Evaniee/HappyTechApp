@@ -538,6 +538,8 @@ namespace HappyTech.FrontEnd
             // Job Applicant
             l_sqlString = "UPDATE job_application SET feedback_id = " + l_feedback.feedback_id + ", score = " + l_score + " WHERE job_application_id = " + m_jobApplication.job_application_id + ";";
             BuisnessMetaLayer.Instance.Update(l_sqlString);
+
+            this.Close();
         }
     }
 }

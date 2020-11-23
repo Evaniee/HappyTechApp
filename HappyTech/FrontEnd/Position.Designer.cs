@@ -134,7 +134,7 @@
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(125, 22);
             this.btn_update.TabIndex = 1;
-            this.btn_update.Text = "Update";
+            this.btn_update.Text = "Update And Save";
             this.btn_update.UseVisualStyleBackColor = true;
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
@@ -142,6 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(700, 338);
             this.Controls.Add(this.btn_update);
             this.Controls.Add(this.lbl_contacted);

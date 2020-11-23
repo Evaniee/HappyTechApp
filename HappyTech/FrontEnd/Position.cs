@@ -100,6 +100,7 @@ namespace HappyTech.FrontEnd
             }
         }
 
+        #region Component Creation
         /// <summary>
         /// Make a name label
         /// </summary>
@@ -235,6 +236,7 @@ namespace HappyTech.FrontEnd
 
             return l_checkBox;
         }
+        #endregion
 
         /// <summary>
         /// Occurs on clicking add applicant button
@@ -243,8 +245,7 @@ namespace HappyTech.FrontEnd
         /// <param name="e">Event arguments</param>
         private void btn_addApplicant_Click(object sender, EventArgs e)
         {
-            //new NewApplicant.Show();
-            MessageBox.Show("OPEN NEW APPLICANT");
+            new NewApplicant(m_jobPosition).Show();
         }
 
         /// <summary>
@@ -258,8 +259,7 @@ namespace HappyTech.FrontEnd
             int l_index = m_profileButtons.IndexOf(m_profileButtons.Find(x => x.Name == l_button.Name));
             JobApplication l_jobApplication = m_jobApplications[l_index];
             Applicant l_applicant = BuisnessMetaLayer.Instance.GetDBApplicant().Find(x => x.applicant_id == l_jobApplication.applicant_id);
-            // new Profile.Show(l_applicant);
-            MessageBox.Show("OPEN APPLICANT " + l_applicant.applicant_id + ": " + l_applicant.name);
+            new Profile(l_applicant).Show();
         }
 
         /// <summary>
@@ -269,6 +269,16 @@ namespace HappyTech.FrontEnd
         /// <param name="e">Event arguments</param>
         private void btn_update_Click(object sender, EventArgs e)
         {
+
+            for(int i = m_jobApplications.Count - 1; i != -1; i--)
+            {
+                JobApplication l_jobApplication = m_jobApplications[i];
+                bool l_hired = m_hiredCheckBoxes[i].Checked;
+                bool l_sent = m_sentCheckBoxes[i].Checked;
+                bool l_contacted = m_contactedCheckBoxes[i].Checked;
+                string l_sqlString = "UPDATE happy_tech.job_application SET hired = " + l_hired + ", sent = " + l_sent + ", contacted = " + l_contacted + " WHERE job_application_id = " + l_jobApplication.job_application_id + ";";
+                BuisnessMetaLayer.Instance.Update(l_sqlString);
+            }
             // Remove Controls
             for(int i = m_applicants.Count + 1; i != 0; i--)
             {

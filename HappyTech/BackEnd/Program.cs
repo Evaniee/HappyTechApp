@@ -21,6 +21,7 @@ namespace HappyTech
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
+            Application.Run(new NewApplicant(new BackEnd.DatabaseClasses.JobPosition() { title = "Title", template_id = 1, description = "Desc", job_code = "Code0" }));
         }
     }
 }
