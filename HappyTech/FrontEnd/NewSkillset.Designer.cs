@@ -71,7 +71,7 @@
             this.Controls.Add(this.btn_Submit);
             this.Controls.Add(this.lbl_Title);
             this.Name = "NewSkillset";
-            this.Text = "NewSkillset";
+            this.Text = "New Skillset";
             this.ResumeLayout(false);
             this.PerformLayout();
 

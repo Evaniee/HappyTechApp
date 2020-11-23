@@ -146,7 +146,7 @@
             this.Controls.Add(this.lbl_addExist);
             this.Controls.Add(this.cmb_addExist);
             this.Name = "TemplateQuestion";
-            this.Text = "NewQuestion";
+            this.Text = "Template Question";
             this.ResumeLayout(false);
             this.PerformLayout();
 

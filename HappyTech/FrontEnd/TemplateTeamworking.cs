@@ -24,9 +24,9 @@ namespace HappyTech.FrontEnd
 
         private void NewTeamworking_Load(object sender, EventArgs e)
         {
-            // test
-            int i = 0;
+
         }
+
         public void Update(List<string> a_addValues, List<string> a_editValues, List<string> a_removeValues, string a_textBoxValue)
         {
             m_update = true;

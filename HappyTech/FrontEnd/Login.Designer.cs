@@ -98,7 +98,7 @@
             this.Controls.Add(this.txt_password);
             this.Controls.Add(this.txt_username);
             this.Name = "Login";
-            this.Text = "Form1";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

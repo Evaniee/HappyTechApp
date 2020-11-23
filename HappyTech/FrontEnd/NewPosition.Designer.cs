@@ -38,6 +38,7 @@
             this.cmb_jobTemplate = new System.Windows.Forms.ComboBox();
             this.lbl_jobTemplate = new System.Windows.Forms.Label();
             this.btn_submit = new System.Windows.Forms.Button();
+            this.btn_updateCmb = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_newPosition
@@ -105,7 +106,7 @@
             // cmb_jobTemplate
             // 
             this.cmb_jobTemplate.FormattingEnabled = true;
-            this.cmb_jobTemplate.Location = new System.Drawing.Point(348, 370);
+            this.cmb_jobTemplate.Location = new System.Drawing.Point(348, 351);
             this.cmb_jobTemplate.Name = "cmb_jobTemplate";
             this.cmb_jobTemplate.Size = new System.Drawing.Size(121, 23);
             this.cmb_jobTemplate.TabIndex = 7;
@@ -115,7 +116,7 @@
             // lbl_jobTemplate
             // 
             this.lbl_jobTemplate.AutoSize = true;
-            this.lbl_jobTemplate.Location = new System.Drawing.Point(348, 352);
+            this.lbl_jobTemplate.Location = new System.Drawing.Point(348, 333);
             this.lbl_jobTemplate.Name = "lbl_jobTemplate";
             this.lbl_jobTemplate.Size = new System.Drawing.Size(76, 15);
             this.lbl_jobTemplate.TabIndex = 8;
@@ -131,11 +132,22 @@
             this.btn_submit.UseVisualStyleBackColor = true;
             this.btn_submit.Click += new System.EventHandler(this.btn_submit_Click);
             // 
+            // btn_updateCmb
+            // 
+            this.btn_updateCmb.Location = new System.Drawing.Point(348, 381);
+            this.btn_updateCmb.Name = "btn_updateCmb";
+            this.btn_updateCmb.Size = new System.Drawing.Size(121, 23);
+            this.btn_updateCmb.TabIndex = 10;
+            this.btn_updateCmb.Text = "Update Templates";
+            this.btn_updateCmb.UseVisualStyleBackColor = true;
+            this.btn_updateCmb.Click += new System.EventHandler(this.btn_updateCmb_Click);
+            // 
             // NewPosition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_updateCmb);
             this.Controls.Add(this.btn_submit);
             this.Controls.Add(this.lbl_jobTemplate);
             this.Controls.Add(this.cmb_jobTemplate);
@@ -147,7 +159,7 @@
             this.Controls.Add(this.lbl_jobTitle);
             this.Controls.Add(this.lbl_newPosition);
             this.Name = "NewPosition";
-            this.Text = "NewPosition";
+            this.Text = "New Position";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,5 +177,6 @@
         private System.Windows.Forms.ComboBox cmb_jobTemplate;
         private System.Windows.Forms.Button btn_submit;
         private System.Windows.Forms.Label lbl_jobTemplate;
+        private System.Windows.Forms.Button btn_updateCmb;
     }
 }

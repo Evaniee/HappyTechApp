@@ -180,7 +180,7 @@
             this.Controls.Add(this.lbl_experience);
             this.Controls.Add(this.txt_experience);
             this.Name = "NewExperience";
-            this.Text = "NewExperience";
+            this.Text = "New Experience";
             this.ResumeLayout(false);
             this.PerformLayout();
 

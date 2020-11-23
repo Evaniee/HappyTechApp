@@ -57,7 +57,6 @@
             this.txt_Requirements.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txt_Requirements.Size = new System.Drawing.Size(532, 115);
             this.txt_Requirements.TabIndex = 3;
-
             // 
             // lbl_RemoveSkillset
             // 
@@ -147,7 +146,7 @@
             this.Controls.Add(this.lbl_Subtitle);
             this.Controls.Add(this.btn_ReturnSkillset);
             this.Name = "TemplateSkillset";
-            this.Text = "TemplateSkillset";
+            this.Text = "Template Skillset";
             this.ResumeLayout(false);
             this.PerformLayout();
 

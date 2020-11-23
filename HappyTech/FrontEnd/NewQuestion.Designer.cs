@@ -180,7 +180,7 @@
             this.Controls.Add(this.txt_reponse5);
             this.Controls.Add(this.btn_submit);
             this.Name = "NewQuestion";
-            this.Text = "NewQuestion";
+            this.Text = "New Question";
             this.ResumeLayout(false);
             this.PerformLayout();
 

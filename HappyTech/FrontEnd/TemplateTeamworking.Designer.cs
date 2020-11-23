@@ -89,7 +89,7 @@
             // lbl_TeamworkingReq
             // 
             this.lbl_TeamworkingReq.AutoSize = true;
-            this.lbl_TeamworkingReq.Location = new System.Drawing.Point(538, 121);
+            this.lbl_TeamworkingReq.Location = new System.Drawing.Point(438, 161);
             this.lbl_TeamworkingReq.Name = "lbl_TeamworkingReq";
             this.lbl_TeamworkingReq.Size = new System.Drawing.Size(154, 15);
             this.lbl_TeamworkingReq.TabIndex = 6;
@@ -98,10 +98,10 @@
             // txt_teamworkingReq
             // 
             this.txt_teamworkingReq.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txt_teamworkingReq.Location = new System.Drawing.Point(521, 154);
+            this.txt_teamworkingReq.Location = new System.Drawing.Point(288, 179);
             this.txt_teamworkingReq.Multiline = true;
             this.txt_teamworkingReq.Name = "txt_teamworkingReq";
-            this.txt_teamworkingReq.Size = new System.Drawing.Size(171, 119);
+            this.txt_teamworkingReq.Size = new System.Drawing.Size(454, 142);
             this.txt_teamworkingReq.TabIndex = 7;
             this.txt_teamworkingReq.TextChanged += new System.EventHandler(this.NewTeamworking_Load);
             // 
@@ -118,7 +118,7 @@
             this.Controls.Add(this.cmb_EditTeamworking);
             this.Controls.Add(this.cmb_NewTeamworking);
             this.Name = "TemplateTeamworking";
-            this.Text = "NewTeamworking";
+            this.Text = "Template Teamworking";
             this.Load += new System.EventHandler(this.NewTeamworking_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
