@@ -19,7 +19,7 @@ namespace HappyTech.BackEnd
         }
 
         /// <summary>
-        /// Gets the current instance of the BuisnessMetaLayer Singletone or makes one if it does not exist
+        /// Gets the current instance of the BuisnessMetaLayer Singleton or makes one if it does not exist
         /// </summary>
         public static BuisnessMetaLayer Instance 
         {
