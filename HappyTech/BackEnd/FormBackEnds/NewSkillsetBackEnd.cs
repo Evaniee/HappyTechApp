@@ -14,6 +14,8 @@ namespace HappyTech.BackEnd.FormBackEnds
         /// <summary>
         /// Constructor for NewSkillsetBackEnd
         /// </summary>
+        /// <param name="a_frontEnd"></param>
+        /// <param name="a_templateSkillsetBackEnd"></param>
         public NewSkillsetBackEnd(NewSkillset a_frontEnd, TemplateSkillsetBackEnd a_templateSkillsetBackEnd)
         {
             m_frontend = a_frontEnd;
@@ -24,6 +26,7 @@ namespace HappyTech.BackEnd.FormBackEnds
         /// <summary>
         /// Return fields to populate the form
         /// </summary>
+        /// <param name="a_skillset"></param>
         public void Populate(Skillset a_skillset)
         {
             m_frontend.Populate(a_skillset.skillset);
@@ -32,6 +35,7 @@ namespace HappyTech.BackEnd.FormBackEnds
         /// <summary>
         /// Submit a skillset to the database
         /// </summary>
+        /// <param name="a_skillset"></param>
         public void Submit(string a_skillset)
         {
             //SQL to insert skillset to database
