@@ -8,9 +8,12 @@ namespace HappyTech.BackEnd.FormBackEnds
 {
     public class NewSkillsetBackEnd
     {
-        NewSkillset m_frontend;                                 // Associated Front End
-        TemplateSkillsetBackEnd m_templateSkillsetBackEnd;
+        private NewSkillset m_frontend;                                 // Associated Front End
+        private TemplateSkillsetBackEnd m_templateSkillsetBackEnd;      // Associated Template Question Back End
 
+        /// <summary>
+        /// Constructor for NewSkillsetBackEnd
+        /// </summary>
         public NewSkillsetBackEnd(NewSkillset a_frontEnd, TemplateSkillsetBackEnd a_templateSkillsetBackEnd)
         {
             m_frontend = a_frontEnd;
@@ -18,13 +21,20 @@ namespace HappyTech.BackEnd.FormBackEnds
             m_templateSkillsetBackEnd = a_templateSkillsetBackEnd;
         }
 
+        /// <summary>
+        /// Return fields to populate the form
+        /// </summary>
         public void Populate(Skillset a_skillset)
         {
             m_frontend.Populate(a_skillset.skillset);
         }
 
+        /// <summary>
+        /// Submit a skillset to the database
+        /// </summary>
         public void Submit(string a_skillset)
         {
+            //SQL to insert skillset to database
             string a_insertSQL = "INSERT INTO skillset VALUES (null, '" + a_skillset + "');";
             BuisnessMetaLayer.Instance.Insert(a_insertSQL);
             List<Skillset> l_allSkillsets = BuisnessMetaLayer.Instance.GetDBSkillset();

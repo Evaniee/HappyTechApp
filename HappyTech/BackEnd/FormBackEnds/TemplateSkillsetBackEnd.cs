@@ -10,9 +10,9 @@ namespace HappyTech.BackEnd.FormBackEnds
 {
     public class TemplateSkillsetBackEnd
     {
-        FrontEnd.TemplateSkillset m_frontEnd;          
+        FrontEnd.TemplateSkillset m_frontEnd;           
         NewTemplateBackEnd m_newTemplateBackEnd;        
-        List<Skillset> m_skillsets;
+        List<Skillset> m_skillsets;                    
 
         public TemplateSkillsetBackEnd(NewTemplateBackEnd a_newTemplateBackEnd, List<Skillset> a_skillsets)
         {
@@ -50,7 +50,6 @@ namespace HappyTech.BackEnd.FormBackEnds
         {
             Skillset l_skillset = new Skillset();
 
-            // If not a new question
             if (a_skillsetString != null)
             {
                 string[] l_skillsetArray = a_skillsetString.Split(':');
