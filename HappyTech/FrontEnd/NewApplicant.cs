@@ -36,10 +36,9 @@ namespace HappyTech.FrontEnd
             HappyTech.BackEnd.DatabaseClasses.Applicant l_applicant = HappyTech.BackEnd.BuisnessMetaLayer.Instance.GetDBApplicant().Find(x => x.name == l_name && x.age == l_age && x.address == l_address && x.email_address == l_emailAddress && x.contact_number == l_contactNumber && x.disabilities == l_disabilities && x.right_to_work == l_rightToWork);
             int l_applicantID = l_applicant.applicant_id;
             string l_jobCode = m_jobPosition.job_code;
-            MessageBox.Show(l_applicantID.ToString() + " & " + l_jobCode);
             l_sqlString = "INSERT INTO happy_tech.job_application VALUES (null, " + l_applicantID + ", '" + l_jobCode + "', null, " + 0 + ", false, false, false);";
-            MessageBox.Show(l_sqlString);
             HappyTech.BackEnd.BuisnessMetaLayer.Instance.Insert(l_sqlString);
+            this.Close();
         }
     }
 }
