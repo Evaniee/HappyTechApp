@@ -24,18 +24,26 @@ namespace HappyTech.BackEnd
 
         private string m_applicantName;
         private string m_positonName;
+        private string m_pdfName;
 
         /// <summary>
         /// Constructor for Pdf Maker
         /// </summary>
-        /// <param name="a_feedback">Associated Feedback</param>
-        public PdfMaker(Feedback a_feedback, string a_applicantName, string a_positionName)
+        /// <param name="a_feedback">Associated Feedback</param>7
+        /// <param name="a_applicantName">Name of applicant</param>
+        /// <param name="a_positionName">Name / title of job position</param>
+        /// <param name="a_pdfName">Name of PDF</param>
+        public PdfMaker(Feedback a_feedback, string a_applicantName, string a_positionName, string a_pdfName)
         {
+            // Setup
             m_converter = new HtmlToPdf();
             m_feedback = a_feedback;
             m_applicantName = a_applicantName;
             m_positonName = a_positionName;
+            m_pdfName = a_pdfName;
             FeedbackValues();
+
+            // Html Related
             m_htmlBuilder = new StringBuilder();
             GenericToHtml();
             QuestionToHtml();
@@ -43,6 +51,8 @@ namespace HappyTech.BackEnd
             SkillsetToHtml();
             TeamworkingToHtml();
             CommentsToHtml();
+
+            // Finalize
             ConvertToPDF(m_htmlBuilder.ToString());
         }
 
@@ -78,108 +88,128 @@ namespace HappyTech.BackEnd
 
         }
 
-
+        /// <summary>
+        /// Generic information for pdf
+        /// </summary>
         private void GenericToHtml()
         {
             m_htmlBuilder.Append("<p>Thank you " + m_applicantName + " for applying to the " + m_positonName + " position at HappyTech. As part of our company policy we provide all applicants with feedback on their interviews. This doccument contains feedback from your recent application<p>");
         }
 
-
+        /// <summary>
+        /// Convert Questions into HTML for pdf conversion
+        /// </summary>
         private void QuestionToHtml()
         {
-            m_htmlBuilder.Append("<table border \"1\"><thead style=\"display: a_tableBody header-group\"><caption>Questions</caption><tr><td>Question</td><td>Criteria Met</td><td>Suitability for Role (Max 5)</td></tr></thead><tbody>");
+            m_htmlBuilder.Append("<table border \"1\"><thead style=\"display: a_tableBody header-group\"><caption>Questions</caption><tr><td style=\"word - wrap: break-word\">Question</td><td style=\"word - wrap: break-word\">Criteria Met</td><td style=\"word - wrap: break-word\">Suitability for Role (Max 5)</td></tr></thead><tbody>");
             for(int i  = 0; i < m_questions.Count; i++)
             {
-                m_htmlBuilder.Append("<tr><td>" + m_questions[i].question + "</td>");
+                m_htmlBuilder.Append("<tr><td style=\"word - wrap: break-word\">" + m_questions[i].question + "</td>");
                 switch (m_fQuestions[i].score)
                 {
                     case 1:
-                        m_htmlBuilder.Append("<td>" + m_questions[i].response1 + "</td><td>Low</td></tr>");
+                        m_htmlBuilder.Append("<td style=\"word - wrap: break-word\">" + m_questions[i].response1 + "</td><td>Low</td></tr>");
                         break;
                     case 2:
-                        m_htmlBuilder.Append("<td>" + m_questions[i].response2 + "</td><td>Below Ideal</td></tr>");
+                        m_htmlBuilder.Append("<td style=\"word - wrap: break-word\">" + m_questions[i].response2 + "</td><td>Below Ideal</td></tr>");
                         break;
                     case 3:
-                        m_htmlBuilder.Append("<td>" + m_questions[i].response3 + "</td><td>Suitable</td></tr>");
+                        m_htmlBuilder.Append("<td style=\"word - wrap: break-word\">" + m_questions[i].response3 + "</td><td>Suitable</td></tr>");
                         break;
                     case 4:
-                        m_htmlBuilder.Append("<td>" + m_questions[i].response4 + "</td><td>Above Ideal</td></tr>");
+                        m_htmlBuilder.Append("<td style=\"word - wrap: break-word\">" + m_questions[i].response4 + "</td><td>Above Ideal</td></tr>");
                         break;
                     case 5:
-                        m_htmlBuilder.Append("<td>" + m_questions[i].response5 + "</td><td>High</td></tr>");
+                        m_htmlBuilder.Append("<td style=\"word - wrap: break-word\">" + m_questions[i].response5 + "</td><td>High</td></tr>");
                         break;
                 }
             }
             m_htmlBuilder.Append("</tbody>");
         }
 
+        /// <summary>
+        /// Convert Experiences into HTML for pdf conversion
+        /// </summary>
         private void ExperienceToHtml()
         {
-            m_htmlBuilder.Append("<table border \"1\"><thead style=\"display: a_tableBody header-group\"><caption>Experience</caption><tr><td>Experience</td><td>Criteria Met</td><td>Suitability for Role (Max 5)</td></tr></thead><tbody>");
+            m_htmlBuilder.Append("<table border \"1\"><thead style=\"display: a_tableBody header-group\"><caption>Experience</caption><tr><td style=\"word - wrap: break-word\">Experience</td><td style=\"word - wrap: break-word\">Criteria Met</td><td style=\"word - wrap: break-word\">Suitability for Role (Max 5)</td></tr></thead><tbody>");
             for (int i = 0; i < m_experiences.Count; i++)
             {
-                m_htmlBuilder.Append("<tr><td>" + m_experiences[i].experience + "</td>");
+                m_htmlBuilder.Append("<tr><td style=\"word - wrap: break-word\">" + m_experiences[i].experience + "</td>");
                 switch (m_fExperiences[i].score)
                 {
                     case 1:
-                        m_htmlBuilder.Append("<td>" + m_experiences[i].response1 + "</td><td>Low (1)</td></tr>");
+                        m_htmlBuilder.Append("<td style=\"word - wrap: break-word\">" + m_experiences[i].response1 + "</td><td>Low (1)</td></tr>");
                         break;
                     case 2:
-                        m_htmlBuilder.Append("<td>" + m_experiences[i].response2 + "</td><td>Below Ideal (2)</td></tr>");
+                        m_htmlBuilder.Append("<td style=\"word - wrap: break-word\">" + m_experiences[i].response2 + "</td><td>Below Ideal (2)</td></tr>");
                         break;
                     case 3:
-                        m_htmlBuilder.Append("<td>" + m_experiences[i].response3 + "</td><td>Suitable (3)</td></tr>");
+                        m_htmlBuilder.Append("<td style=\"word - wrap: break-word\">" + m_experiences[i].response3 + "</td><td>Suitable (3)</td></tr>");
                         break;
                     case 4:
-                        m_htmlBuilder.Append("<td>" + m_experiences[i].response4 + "</td><td>Above Ideal (4)</td></tr>");
+                        m_htmlBuilder.Append("<td style=\"word - wrap: break-word\">" + m_experiences[i].response4 + "</td><td>Above Ideal (4)</td></tr>");
                         break;
                     case 5:
-                        m_htmlBuilder.Append("<td>" + m_experiences[i].response5 + "</td><td>High (5)</td></tr>");
+                        m_htmlBuilder.Append("<td style=\"word - wrap: break-word\">" + m_experiences[i].response5 + "</td><td>High (5)</td></tr>");
                         break;
                 }
             }
             m_htmlBuilder.Append("</tbody>");
         }
 
+        /// <summary>
+        /// Convert Skillsets into HTML for pdf conversion
+        /// </summary>
         private void SkillsetToHtml()
         {
-            m_htmlBuilder.Append("<table border \"1\"><thead style=\"display: a_tableBody header-group\"><caption>Skillset</caption><tr><td>Skillset</td><td>Suitable for Role</td></tr></thead><tbody>");
+            m_htmlBuilder.Append("<table border \"1\"><thead style=\"display: a_tableBody header-group\"><caption>Skillset</caption><tr><td style=\"word - wrap: break-word\">Skillset</td><td style=\"word - wrap: break-word\">Suitable for Role</td></tr></thead><tbody>");
             for (int i = 0; i < m_skillsets.Count; i++)
             {
-                m_htmlBuilder.Append("<tr><td>" + m_skillsets[i].skillset + "</td>");
+                m_htmlBuilder.Append("<tr><td style=\"word - wrap: break-word\">" + m_skillsets[i].skillset + "</td>");
                 if(m_fSkillsets[i].achieved)
-                    m_htmlBuilder.Append("<td>Yes</td></tr>");
+                    m_htmlBuilder.Append("<td style=\"word - wrap: break-word\">Yes</td></tr>");
                 else
-                    m_htmlBuilder.Append("<td>No</td></tr>");
+                    m_htmlBuilder.Append("<td style=\"word - wrap: break-word\">No</td></tr>");
 
             }
             m_htmlBuilder.Append("</tbody>");
         }
 
+        /// <summary>
+        /// Convert Questions into HTML for pdf conversion
+        /// </summary>
         private void TeamworkingToHtml()
         {
-            m_htmlBuilder.Append("<table border \"1\"><thead style=\"display: a_tableBody header-group\"><caption>Teamworking</caption><tr><td>Teamworking</td><td>Suitable for Role</td></tr></thead><tbody>");
+            m_htmlBuilder.Append("<table border \"1\"><thead style=\"display: a_tableBody header-group\"><caption>Teamworking</caption><tr><td style=\"word - wrap: break-word\">Teamworking</td><td style=\"word - wrap: break-word\">Suitable for Role</td></tr></thead><tbody>");
             for (int i = 0; i < m_teamworkings.Count; i++)
             {
-                m_htmlBuilder.Append("<tr><td>" + m_teamworkings[i].teamworking + "</td>");
+                m_htmlBuilder.Append("<tr><td style=\"word - wrap: break-word\">" + m_teamworkings[i].teamworking + "</td>");
                 if (m_fTeamworkings[i].achieved)
-                    m_htmlBuilder.Append("<td>Yes</td></tr>");
+                    m_htmlBuilder.Append("<td style=\"word - wrap: break-word\">Yes</td></tr>");
                 else
-                    m_htmlBuilder.Append("<td>No</td></tr>");
+                    m_htmlBuilder.Append("<td style=\"word - wrap: break-word\">No</td></tr>");
 
             }
             m_htmlBuilder.Append("</tbody>");
         }
 
+        /// <summary>
+        /// Comments into HTML for pdf conversion
+        /// </summary>
         private void CommentsToHtml()
         {
-            m_htmlBuilder.Append("<table border \"1\"><thead style=\"display: a_tableBody header-group\"><caption>Comments</caption></thead><tbody><tr><td>" + m_feedback.comments + "</td></tr></tbody>");
+            m_htmlBuilder.Append("<table border \"1\"><thead style=\"display: a_tableBody header-group\"><caption>Comments</caption></thead><tbody><tr><td style=\"word - wrap: break-word\">" + m_feedback.comments + "</td></tr></tbody>");
         }
 
-        public void ConvertToPDF(string a_htmlString)
+        /// <summary>
+        /// Convert html string into pdf
+        /// </summary>
+        /// <param name="a_htmlString">HTML to convert into PDF</param>
+        private void ConvertToPDF(string a_htmlString)
         {
             PdfDocument l_doccument = m_converter.ConvertHtmlString(a_htmlString);
-            l_doccument.Save("HappyTechFeedback.pdf");
+            l_doccument.Save(m_pdfName);
             l_doccument.Close();
         }
         

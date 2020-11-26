@@ -342,7 +342,58 @@ namespace HappyTech.FrontEnd
                 }
             }
             if (l_valid)
-                MessageBox.Show("INFORM APPLICANTS HERE");
+            {
+                for (int i = 0; i < m_jobApplications.Count; i++)
+                {
+                    if (!m_sentCheckBoxes[i].Checked)
+                    {
+                        JobApplication l_jobApplication = m_jobApplications[i];
+                        HappyTech.BackEnd.DatabaseClasses.Feedback l_feedback = BuisnessMetaLayer.Instance.GetDBFeedback().Find(x => x.feedback_id == l_jobApplication.feedback_id);
+                        HappyTech.BackEnd.DatabaseClasses.Applicant l_applicant = BuisnessMetaLayer.Instance.GetDBApplicant().Find(x => x.applicant_id == l_jobApplication.applicant_id);
+                        string l_pdfName = l_applicant.name + l_applicant.applicant_id + "[" + m_jobPosition.job_code + "].pdf";
+                        PdfMaker l_pdfMaker = new PdfMaker(l_feedback, l_applicant.name, m_jobPosition.title, l_pdfName);
+                        if (EmailClient.Instance.SendEmail(l_applicant.email_address, m_jobPosition.title, l_jobApplication.hired, l_pdfName))
+                        {
+                            string l_sqlString = "UPDATE happy_tech.job_application SET sent = true WHERE job_application_id = " + l_jobApplication.job_application_id + ";";
+                            BuisnessMetaLayer.Instance.Update(l_sqlString);
+                        }
+                        else
+                        {
+                            MessageBox.Show("CANNOT Send Email");
+                        }
+                    }
+                }
+
+                // Update Form
+
+                // Remove Controls
+                for (int i = m_applicants.Count + 1; i != 0; i--)
+                {
+                    this.Controls.RemoveByKey("lbl_name" + i);
+                    this.Controls.RemoveByKey("chk_hired" + i);
+                    this.Controls.RemoveByKey("btn_profile" + i);
+                    this.Controls.RemoveByKey("btn_feedback" + i);
+                    this.Controls.RemoveByKey("lbl_score" + i);
+                    this.Controls.RemoveByKey("chk_sent" + i);
+                    this.Controls.RemoveByKey("chk_contacted" + i);
+                }
+
+                // Clear Lists
+                m_nameLabels.Clear();
+                m_hiredCheckBoxes.Clear();
+                m_profileButtons.Clear();
+                m_feedbackButtons.Clear();
+                m_scoreLabels.Clear();
+                m_sentCheckBoxes.Clear();
+                m_contactedCheckBoxes.Clear();
+
+                // Update Lists
+                m_jobApplications = new PositionBackEnd().FindApplications(m_jobPosition);
+                m_applicants = new PositionBackEnd().FindApplicants(m_jobApplications);
+
+                // Repopulate
+                Populate();
+            }
         }
     }
 }
