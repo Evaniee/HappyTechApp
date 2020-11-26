@@ -74,7 +74,7 @@ namespace HappyTech.BackEnd
             if (DatabaseConnection.Instance.Open())
             {
                 List<FeedbackQuestion> l_feedbackQuestions = new List<FeedbackQuestion>();
-                MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT * FROM feedback_questions;");
+                MySqlDataReader l_dataReader = DatabaseConnection.Instance.Select("SELECT * FROM feedback_question;");
 
                 while (l_dataReader.Read())
                 {
