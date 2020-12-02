@@ -328,8 +328,6 @@ namespace HappyTech.FrontEnd
         /// <param name="e">Event arguments</param>
         private void btn_informApplicant_Click(object sender, EventArgs e)
         {
-            // INFORM CODE TO GO HERE
-
             // Can inform if all applicants have 
             bool l_valid = true;
             foreach (JobApplication i_jobApplication in m_jobApplications)
