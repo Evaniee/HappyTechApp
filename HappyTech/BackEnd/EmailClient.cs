@@ -29,11 +29,10 @@ namespace HappyTech.BackEnd
             {
                 m_emailAddress = l_properties["EmailAddress"];
 
-                m_client = new SmtpClient();
-                m_client.Host = l_properties["Host"];
-                m_client.Port = int.Parse(l_properties["Port"]);
+                m_client = new SmtpClient(l_properties["Host"], int.Parse(l_properties["Port"]));
                 m_client.DeliveryMethod = SmtpDeliveryMethod.Network;
                 m_client.UseDefaultCredentials = false;
+                m_client.EnableSsl = true;
                 m_client.Credentials = new NetworkCredential(m_emailAddress, l_properties["Password"]);
             }
             catch (NullReferenceException)
@@ -90,19 +89,45 @@ namespace HappyTech.BackEnd
         /// <summary>
         /// Attempt to send an email
         /// </summary>
-        /// <param name="a_email">Email to send</param>
-        /// <returns>True if successful, False if not</returns>
-        public bool SendEmail(MailMessage a_email)
+        /// <param name="a_applicantEmailAddress">Email Address of Applicant</param>
+        /// <param name="a_jobPositionName">Name of job position</param>
+        /// <param name="a_hired">If Hired</param>
+        /// <param name="a_pdfName">Name of PDF</param>
+        /// <returns>True if sent, False if not</returns>
+        public bool SendEmail(string a_applicantEmailAddress, string a_jobPositionName, bool a_hired, string a_pdfName)
         {
             try
             {
-                m_client.Send(a_email);
+                m_client.Send(MakeEmail(a_applicantEmailAddress, a_jobPositionName, a_hired, a_pdfName));
                 return true;
             }
             catch
             {
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Create email to send
+        /// </summary>
+        /// <param name="a_applicantAddress">Email Address of Applicant</param>
+        /// <param name="a_jobPosition">Name of job position</param>
+        /// <param name="a_hired">If Hired</param>
+        /// <param name="a_pdfName">Name of PDF</param>
+        /// <returns>Email to Send</returns>
+        private MailMessage MakeEmail(string a_applicantAddress, string a_jobPosition, bool a_hired, string a_pdfName)
+        {
+            string l_subject = "Feedback from your HappyTech " + @a_jobPosition + @" application";
+            string l_body;
+            if (a_hired)
+                l_body = "Thank you for applying for the positon of " + @a_jobPosition + @" at HappyTech are happy to inform you that you have been chosen for the postion. Please find attached feedback from your application";
+            else
+                l_body = "Thank you for applying for the positon of " + @a_jobPosition + @" at HappyTech we regret to inform you that you have not been chosen for the postion. Please find attached feedback from your application";
+            MailMessage l_mailMessage = new MailMessage(m_emailAddress, a_applicantAddress, l_subject, l_body);
+            l_mailMessage.From = new MailAddress(m_emailAddress, @"HappyTech");
+            l_mailMessage.Priority = MailPriority.High;
+            l_mailMessage.Attachments.Add(new Attachment(a_pdfName));
+            return l_mailMessage;
         }
 
         /// <summary>
